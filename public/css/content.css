@@ -1,0 +1,187 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+#navbar{
+    background-color: #404952;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    width:100vw;
+    height:16vh;
+    overflow:hidden;
+    position: relative;
+    /* background-color:#f8f8f8; */
+}
+#logo{
+    margin-right: 4rem;
+    margin-top: 1.1rem;
+    margin-bottom: 1.1rem;
+}
+#logo img{
+    height:5rem;
+    width:5.5rem;
+}
+#navbar ul{
+    display:flex;
+}
+#navbar ul li{
+    list-style:none;
+}
+#navbar ul li a{
+    font-family: 'Merriweather', serif;
+    display: block;
+    text-decoration:none;
+    color:#ffffff;
+    padding: 38px 30px;
+    border-radius:5px;
+
+}
+#navbar ul li a:hover{
+    background-color:#034079;
+    color:#f6f6f6;
+    transition-duration: 0.5s;
+}
+
+.items{
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+/* CSS for Access Bar */
+
+#accessBar{
+    width:100vw;
+    height:11vh;
+    background-color: #404952;
+    position: relative;
+}
+#whiteSpace{
+    width:100vw;
+    height:2vh;
+    background-color:white;
+}
+
+#contentArea{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#contentArea ul{
+    display: flex;
+    background-color:white;
+    padding-top: 0.5rem;
+    height:3.5rem;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+
+#contentArea ul li {
+    list-style: none;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+#contentArea ul li a{
+    text-decoration: none;
+    padding:0.5rem 1.5rem;
+    padding-bottom:1rem;
+    margin:0rem 0.3rem;
+    color:#404952;
+}
+#contentArea ul li a:hover{
+    background-color:#034079;
+    color:#ffffff;
+    border-radius: 8px;
+}
+
+
+/* ShortCut  area section */
+#shortcutArea{
+    padding-top:1rem;
+    width:100vw;
+    height:80vh;
+    background-color: #404952;
+}
+#contentShortcuts{
+    display:flex;
+    justify-content: center;
+}
+#mcqShortcut{
+    height:60vh;
+    width:20vw;
+    background-color:#c9e0f7;
+    border-right: 2px solid black;
+    display:flex;
+    text-align: center;
+    flex-direction:column;
+}
+
+#mcqShortcut h3{
+    margin-top:0.5rem;
+}
+
+#mcqShortcut ul{
+    list-style:none;
+}
+#mcqShortcut ul li{
+    margin-top:1rem;
+}
+
+#mcqShortcut ul li a{
+    text-decoration: none;
+    color:#404952;
+}
+#mcqShortcut ul li a:hover{
+    color:#0185f8;
+}
+#textArea{
+    height:50vh;
+    width:30vw;
+    background-color:white;
+    border-right: 2px solid black;
+    text-align: center;
+}
+
+#textArea h2{
+    font-size:2rem;
+}
+
+#textArea p{
+    margin-top:1rem;
+}
+#questionPaperShortcut{
+    height:60vh;
+    width:30vw;
+    background-color:#c9e0f7;
+    border-right: 2px solid black;
+    display:flex;
+    flex-direction: column;
+}
+
+#questionPaperShortcut .tiles{
+    margin:1rem;
+    background-color:#ffffff;
+    border-radius:5px;
+    padding:0.5rem 0rem;
+    text-align:center;
+}
+
+#questionPaperShortcut .tiles a{
+    text-decoration: none;
+    color:#404952;
+}
+
+#questionPaperShortcut .tiles a:hover{
+    color:#0185f8;
+}
+
+/* Blog ShortCut area */
+
+#blogShortcut{
+    width:100vw;
+    height:40vh;
+    background-color:white;
+}
