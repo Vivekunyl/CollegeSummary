@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const  {engine}  = require("express-handlebars");
 const path = require("path");
-const port = 8000;
+const port = process.env.PORT || 8000;
 const routes = require('./routes/handlers');
 app.use(express.static(path.join(__dirname,'public')));
 
