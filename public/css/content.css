@@ -113,10 +113,11 @@
     height:60vh;
     width:20vw;
     background-color:#c9e0f7;
-    border-right: 2px solid black;
     display:flex;
     text-align: center;
     flex-direction:column;
+    border-radius:8px;
+    margin-right:0.5rem;
 }
 
 #mcqShortcut h3{
@@ -143,6 +144,8 @@
     background-color:white;
     border-right: 2px solid black;
     text-align: center;
+    border-radius: 8px;
+    margin-right: 0.5rem;
 }
 
 #textArea h2{
@@ -159,6 +162,7 @@
     border-right: 2px solid black;
     display:flex;
     flex-direction: column;
+    border-radius:8px;
 }
 
 #questionPaperShortcut .tiles{
@@ -182,6 +186,283 @@
 
 #blogShortcut{
     width:100vw;
-    height:40vh;
+    height:60vh;
+    background-color:#404952;
+}
+
+#blogcontent{
+    height:30vh;
+    width:80vw;
     background-color:white;
+    font-style:italic;
+    font-size:18px;
+    margin:0rem auto;
+    padding:1rem;
+    border-radius:8px;
+    box-shadow: 13px 11px 30px #272727;
+}
+
+#blogcontent #bold{
+    font-weight:bold;
+}
+#topHeading{
+    width:25vw;
+    background-color:white;
+    text-align:center;
+    margin:0rem auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color:#c9e0f7;
+}
+
+#blogSecionButton{
+    background-color:white;
+    margin:0rem auto;
+    width:25vw;
+    height:5vh;
+    text-align:center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color:#c9e0f7;
+}
+
+#blogSecionButton ul li{
+    list-style: none;
+    padding-top:0.5rem;
+}
+
+#blogSecionButton a{
+    text-decoration: none;
+    color:black;  
+}
+#blogSecionButton a:hover{
+    color:#0185f8;
+    font-weight:800;
+}
+
+
+
+
+/* MEDIA QUERY */
+
+@media only screen and (max-width:1095px) and (min-width:900px){
+    #blogcontent{
+        font-size:15px;
+    }
+}
+
+@media only screen and (max-width:900px) and (min-width:800px){
+    #blogcontent{
+        font-size:14px;
+    }
+    #topHeading h2{
+        font-size: 1rem;;
+    }
+
+}
+
+@media only screen and (max-width:800px) and (min-width:600px){
+    #navbar{
+        flex-direction:column;
+        height:23vh;
+    }
+    #logo{
+        margin-bottom:0.5rem;
+    }
+    #navbar ul li a{
+        padding: 10px 30px;
+    }
+    #shortcutArea{
+        height:70vh;
+    }
+    #contentArea ul li a {
+        padding: 3px 4px;
+        font-size: 14px;
+    }
+    #textArea h2 {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+    #textArea p {
+        margin-top: 1rem;
+        padding: 0.5rem;
+        font-size:1.0rem;
+    }
+    #topHeading{
+        width:50vw;
+    }
+    #blogcontent {
+        height:40vh;
+        font-size: 16px;
+    }
+    #blogSecionButton{
+        width: 50vw;
+    }
+}
+
+@media only screen and (max-width:600px) and (min-width:400px){
+    #navbar {
+        flex-direction:column;
+        height:20vh;
+    }
+    #logo {
+        margin-right: 3rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    #logo img {
+        height: 4rem;
+        width: 5rem;
+    }
+    #navbar ul li a {
+        padding: 10px 6px;
+        border-radius: 4px;
+        font-size: 15px;    
+    }
+    #accessBar{
+        height:27vh;
+    }
+    #contentArea{
+        height:25vh;
+    }
+    #contentArea ul{
+        padding: 0.5rem;
+        flex-direction: column;
+        height:20vh;
+    }
+    #contentArea ul li{
+        margin:0.3rem 0rem;
+    }
+    #contentArea ul li a{
+        padding:0rem 1rem;
+        padding-bottom: 0.2rem;
+    }
+    #shortcutArea{
+        height: 150vh;
+    }
+    #contentShortcuts{
+        flex-direction: column;
+    }
+    #mcqShortcut {
+        height: 40vh;
+        width: 75vw;
+        margin: 0rem auto;
+        margin-bottom: 2rem;
+    }
+    #textArea {
+        height: 45vh;
+        width: 100vw;
+        margin-bottom: 2rem;
+        margin-right: 0rem;
+        border-radius: 0px;
+    }
+    #questionPaperShortcut {
+        height: 48vh;
+        width: 75vw;
+        margin: 0rem auto;
+    }
+    #blogShortcut {
+        height:70vh;
+    }
+    #topHeading {
+        width: 70vw;
+        padding: 0.5rem;
+    }
+    #blogcontent{
+        height: 50vh;
+        width: 100vw;
+        font-size: 16px;
+        border-radius: 0px;
+    }
+    #blogSecionButton{
+        width: 70vw;
+        height: 5vh;
+    }
+}
+
+@media only screen and (max-width:400px) and (min-width:330px){
+    #navbar {
+        flex-direction:column;
+        height:20vh;
+    }
+    #logo {
+        margin-right: 3rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    #logo img {
+        height: 4rem;
+        width: 5rem;
+    }
+    #navbar ul li a {
+        padding: 10px 6px;
+        border-radius: 4px;
+        font-size: 14px;    
+    }
+    #accessBar{
+        height:27vh;
+    }
+    #contentArea{
+        height:25vh;
+    }
+    #contentArea ul{
+        padding: 0.5rem;
+        flex-direction: column;
+        height:22vh;
+        border-radius: 0px;
+    }
+    #contentArea ul li{
+        margin:0.3rem 0rem;
+    }
+    #contentArea ul li a{
+        padding:0rem 1rem;
+        padding-bottom: 0.2rem;
+    }
+    #contentArea ul li a:hover{
+        border-radius: 0px;
+    }
+    #shortcutArea{
+        height: 150vh;
+    }
+    #contentShortcuts{
+        flex-direction: column;
+    }
+    #mcqShortcut {
+        height: 40vh;
+        width: 75vw;
+        margin: 0rem auto;
+        margin-bottom: 2rem;
+    }
+    #textArea {
+        height: 45vh;
+        width: 100vw;
+        margin-bottom: 2rem;
+        margin-right: 0rem;
+        border-radius: 0px;
+    }
+    #questionPaperShortcut {
+        height: 48vh;
+        width: 75vw;
+        margin: 0rem auto;
+    }
+    #blogShortcut {
+        height:80vh;
+    }
+    #topHeading {
+        width: 70vw;
+        padding: 0.5rem;
+    }
+    #topHeading h2{
+        font-size:17px;
+    }
+    #blogcontent{
+        height: 60vh;
+        width: 100vw;
+        font-size: 16px;
+        border-radius: 0px;
+    }
+    #blogSecionButton{
+        width: 70vw;
+        height: 5vh;
+    }
 }

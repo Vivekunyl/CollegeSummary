@@ -18,6 +18,8 @@ app.use("/contact",routes);
 
 app.use("/content",routes);
 
+app.use('/test',routes);
+
 app.listen(port,()=>{
     console.log(`Port started at port http://localhost:${port}`);
 });

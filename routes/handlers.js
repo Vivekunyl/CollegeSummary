@@ -5,7 +5,7 @@ const router = express.Router();
 router.get('/',(req,res)=>{
     res.render('index',{
         title:"Home Page",
-        style:"style.css"
+        style:"index.css"
     });
 });
 
@@ -27,8 +27,16 @@ router.get('/contact',(req,res)=>{
 
 router.get('/content',(req,res)=>{
     res.render('content',{
-        title:"My Blogs",
+        title:"Content|Collegesummary",
         style:"content.css"
     });
-})
+});
+
+router.get('/test',(req,res)=>{
+    res.render('test',{
+        title:"Content|MCQ",
+        style:"test.css"
+    });
+});
+
 module.exports = router;
