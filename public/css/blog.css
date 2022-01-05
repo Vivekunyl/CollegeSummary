@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');  /*For blog Section*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 *{
@@ -101,107 +102,127 @@
     border-radius: 8px;
 }
 
-/* Filter Section */
-#mcqFilters{
-    height:10vh;
-    width:100vw;
-    background-color:#ffffff;
-}
-#filterSection{
-    display:flex;
-    justify-content:center;
-}
 
-#filterSection ul{
-    display:flex;
-    flex-wrap: wrap;
-    background-color:#404952;
-    height:10vh;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
+/* CSS for blogshortcut */
 
-#filterSection ul li{
-    list-style: none;
-    margin:auto 0.5rem;
-}
-#filterSection ul li a{
-    font-family: 'Ubuntu', sans-serif;
-    text-decoration: none;
-    color:#ffffff;
-    padding:0.5rem 0.5rem;
-}
-#filterSection ul li a:hover{
-    background-color:#034079;
-    border-radius: 5px;
-}
-.forstyle{
+.blogShortcuts{
     height:40vh;
     width:100vw;
-    display:block;
+    background-color:#404952;
 }
-.forstyle_1{
-    display:flex;
-    justify-content:center;
-    margin-top: 2rem;
-    background-color:rgb(226 241 255);
-    background-image: repeating-linear-gradient(20deg,#ffffff ,rgb(226 241 255) 10%);
-    height:43vh;
+
+.blogShortcutContainer{
+    height: 40vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.forstyle_1 ul{
-    display:flex;
-    justify-content:center;
-    flex-wrap: wrap;
-    margin:auto 0vw;
-    /* flex-direction: column; */
-}
-.forstyle_1 ul li{
-    list-style: none;
-    margin: 1.5rem;
-}
-.forstyle_1 h2{
+
+.blogShortcutContainer h3{
     font-family: 'Roboto', sans-serif;
-    margin:auto 4vw;
-    background-color:#ffffff;
-    color:#404952;
-    border-radius: 8px;
-    padding:0.5rem;
+    text-align: center;
+    color:white;
 }
-.forstyle_1 ul li a{
+
+.blogsLink{
+    height:30vh;
+    margin-top: 0.5rem;;
+}
+
+.blogsLink ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blogsLink ul li{
+    list-style: none;
+    margin:0.8rem;
+}
+
+.blogsLink ul li a{
     font-family: 'Ubuntu', sans-serif;
     text-decoration: none;
-    color: white;
-    background-color: #404952;
-    padding: 1rem;
-    font-size: 1.2rem;
-    border-radius: 20px;
+    color:#034079;
+    background-color:white;
+    border-radius: 5px;
+    padding:0.5rem;
 }
 
-.forstyle_1 ul li a:hover{
-    background-color:#034079;
-    color:#ffffff;
+.blogsLink ul li a:hover{
+    color:#77bdff;
 }
 
-
-
-/* css for mcqLoadingSection */
-
-#biotestobj1{
-    height:55vh;
-    width:60vw;
-    margin-top: 1rem;
-    /* overflow-y: scroll; */
-}
-
-#mcqLoadingSection{
-    height:70vh;
+/* Default blog section */
+.blogarea{
+    height:150vh;
     width:100vw;
-    display:none;
-    justify-content:center;
+    display:flex;
+    flex-direction: column;
+    background-color:#ffffff;
 }
 
-/* Css for footer section */
+.DefaultBlogPost{
+    height:50vh;
+    width:85vw;
+    background-color:#fffaee;
+    margin:0px auto;
+    padding:1rem;
+}
+
+#DefaultBlog h2{
+    font-family: 'Roboto', sans-serif;
+    text-align:center;
+    margin-bottom:0.5rem;
+}
+
+#bold{
+    font-weight: bold;
+}
+
+#DefaultBlog p{
+    font-family: 'Roboto Condensed', sans-serif;
+    color:#404952;
+    font-size:1rem;
+}
+
+.getBlogData{
+    height:100vh;
+    width:85vw;
+    margin:2rem auto;
+    background-color:#fdfaf3;
+    display:block;
+    padding:1rem;
+}
+
+.getBlogData h2{
+    font-family: 'Roboto', sans-serif;
+    margin:0.5rem 0rem;
+}
+
+.getBlogData p{
+    font-family: 'Roboto Condensed', sans-serif;
+    color:#404952;
+    font-size:1rem;
+}
+
+.getBlogData img{
+    height:20vh;
+    width:20vw;
+    margin:0.5rem;
+}
+
+.text-center{
+    text-align:center;
+}
+
+.gap{
+    margin:1rem;
+}
+
+/* Css for footer Section */
 #footer_section{
+    font-family: 'Ubuntu', sans-serif;
     width:100vw;
     background-color:black;
     color:white;
@@ -211,9 +232,7 @@
 
 
 
-
-/* MEDIA QUERY SECTION */
-
+/* Media Query */
 
 @media only screen and (max-width:800px) and (min-width:600px){
     #navbar{
@@ -226,13 +245,16 @@
     #navbar ul li a{
         padding: 10px 30px;
     }
-    #shortcutArea{
-        height:70vh;
-    }
+
     #contentArea ul li a {
         padding: 3px 4px;
         font-size: 14px;
     }
+
+    .blogsLink ul li a{
+        font-size: 12px;
+    }
+
 }
 
 @media only screen and (max-width:600px) and (min-width:400px){
@@ -273,60 +295,19 @@
         padding-bottom: 0.2rem;
     }
 
-    #navbar {
-        flex-direction:column;
-        height:20vh;
+    .blogsLink ul li a{
+        font-size: 10px;
     }
-    #logo {
-        margin-right: 3rem;
-        margin-top: 1rem;
-        margin-bottom: 0.5rem;
-    }
-    #logo img {
-        height: 4rem;
-        width: 5rem;
-    }
-    #navbar ul li a {
-        padding: 10px 6px;
-        border-radius: 4px;
-        font-size: 15px;    
-    }
-    #accessBar{
-        height:27vh;
-    }
-    #contentArea{
-        height:25vh;
-    }
+
     #contentArea ul{
-        padding: 0.5rem;
-        flex-direction: column;
-        height:20vh;
+        height: 23vh;
     }
-    #contentArea ul li{
-        margin:0.3rem 0rem;
-    }
-    #contentArea ul li a{
-        padding:0rem 1rem;
-        padding-bottom: 0.2rem;
-    }
-    .forstyle {
-        height: 30vh;
-    }
-    .forstyle_1 {
-        height:33vh;
-    }
-    .forstyle_1 ul li{
-        margin:1.2rem;
-    }
-    .forstyle_1 ul li a {
-        padding: 0.8rem;
-        font-size: 1rem;
-    }
-    #biotestobj1{
-        width:85vw;
-        height:70vh;
+
+    .DefaultBlogPost{
+        height: 60vh;
     }
 }
+
 
 @media only screen and (max-width:400px) and (min-width:330px){
     #navbar {
@@ -370,21 +351,37 @@
         border-radius: 0px;
     }
 
-    .forstyle {
+    .blogShortcuts{
+        height: 45vh;
+    }
+
+    .blogShortcutContainer{
+        height: 45vh;
+    }
+
+    .blogsLink{
         height: 40vh;
+    } 
+
+    .blogsLink ul li a{
+        font-size: 10px;
     }
-    .forstyle_1 {
-        height:40vh;
+
+    .DefaultBlogPost{
+        height: 75vh;
     }
-    .forstyle_1 ul li{
-        margin:1.2rem;
+
+    .blogarea {
+        height: 200vh;
     }
-    .forstyle_1 ul li a {
-        padding: 0.8rem;
-        font-size: 0.7rem;
+
+    .getBlogData{
+        height: 225vh;
     }
-    #biotestobj1{
-        width:90vw;
-        height:68vh;
+
+    .getBlogData img{
+        height:20vh;
+        width:45vw;
+        margin:0.5rem;
     }
 }

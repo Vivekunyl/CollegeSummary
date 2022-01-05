@@ -1,0 +1,40 @@
+{{> navbar}}
+{{> accessbar}}
+
+<section class="blogShortcuts">
+    <div class="blogShortcutContainer">
+        <h3>More Blogs</h3>
+        <div class="blogsLink">
+            <ul>
+                <li>
+                    <a href="javascript:;" onclick="best_College();">Colleges in Uttarakhand</a>
+                </li>
+                <li>
+                    <a href="javascript:;" onclick="gbpiet();">Know about GBPIET</a>
+                </li>
+                <li>
+                    <a href="">Why JAVA is still used as a huge technology for backend</a>
+                </li>
+                <li>
+                    <a href="">Best languages for backend Development</a>
+                </li>
+                <li>
+                    <a href="">How to use Handlebars template engine in Node.js</a>
+                </li>
+                <li>
+                    <a href="">Exam Schedules for MCA GBPIET</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="blogarea">
+    <div class="DefaultBlogPost" id="DefaultBlog">
+            {{!-- Content will be loaded by FETCH --}}
+    </div>
+    <div class="getBlogData" id="getBlogData">
+
+    </div>
+</section>
+{{> footer}}
+<script src="script/blogs.js"></script>

@@ -1,0 +1,330 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+    * {
+        top: 0px;
+        margin: 0px;
+    }
+
+    #test {
+        background-color: rgb(226 241 255);
+        height: 100vh;
+        border-radius: 8px;
+    }
+
+    .main {
+        height: 85vh;
+        width: 90vw;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main ul {
+        display: contents;
+    }
+
+    .main h2 {
+        font-family: 'Ubuntu', sans-serif;
+        margin-top: 0.5rem;
+    }
+
+    .main ul li {
+        font-family: 'Roboto Condensed', sans-serif;
+        list-style: none;
+        margin: 0.5rem;
+    }
+
+    #button {
+        display: flex;
+        justify-content: center;
+    }
+
+    #button2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        width: fit-content;
+        /* margin: 1rem 10rem; */
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+    }
+
+    #showScore {
+        height: 25vh;
+        background-color: #eefaff;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+
+    #showScore h3 {
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+
+    .btn {
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+</style>
+
+
+
+<section id="test">
+    <div class="main">
+        <h2 class="question">Q1. will be here what is the full form of CSS?</h2>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="ans1" class="answer">
+                <label for="ans1" id="option1">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans2" class="answer">
+                <label for="ans2" id="option2">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans3" class="answer">
+                <label for="ans3" id="option3">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans4" class="answer">
+                <label for="ans4" id="option4">Answer</label>
+            </li>
+        </ul>
+        <div id="button">
+            <button id="submit">Submit</button>
+        </div>
+        <div id="showScore" class="scoreArea">
+
+        </div>
+    </div>
+</section>
+
+<script>
+    //javascript for mcq ection    
+
+    const quizdata = [
+    {
+    question: "Q1. Which of the following implies the greatest precision?",
+    a: "10.1",
+    b: "10.10",
+    c: "10.100",
+    d: "10.1000",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q2. Which of the following is NOT one of the fundamental quantities in physics?",
+    a: "Time",
+    b: "Length",
+    c: "Weight",
+    d: "Mass",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q3. Nuclear sizes are expressed in a unit named",
+    a: "Fermi",	
+    b: "Angstrom",
+    c: "Newton",	
+    d: "Tesla",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q4. Which of the following is not a vector quantity?",
+    a: "speed",	
+    b: "velocity",
+    c: "torque",	
+    d: "displacement",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q5.  A man weighing 65 kg jumps from a 100 ft high building with a load of 35 kg. What wlii be the load experienced by him?",
+    a: "20 kg",
+    b: "100 kg",
+    c: "200 kg",
+    d: "Zero",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q6.The universal law of gravitation was propounded by",
+    a: "Kepler",
+    b: "Galileo",
+    c: "Newton",
+    d: "Copernicus",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q7.  Steel is more elastic than Rubber because",
+    a: "Its density is high",
+    b: "It is a metal",
+    c: "Ratio of stress to strain is more",
+    d: "Ratio of stress to strain is less",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q8. The main reserves of phosphorus in the biosphere is in the",
+    a: "Hydrosphere",
+    b: "Atmosphere",
+    c: "Lithosphere",
+    d: "Troposphere",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q9.  Ozone hole refers to",
+    a: "Hole in ozone layer",
+    b: "Decrease in the ozone layer in troposphere",
+    c: "Decrease in thickness of ozone layer in stratosphere",
+    d: "Increase in the thickness of ozone layer in troposphere",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q10. Super conductivity is a phenomenon in which the resistance of a substance",
+    a: "Increases with temperature",
+    b: "Decreases with temperature",
+    c: "Does not change with temperature",
+    d: "Becomes zero at very low temperature",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q11.  If a parallel beam of light is incident on a convex lens, all the rays after refraction through the lens…..",
+    a: "Approach one another and converge at a point",
+    b: "Move away from one another",
+    c: "Move parallel to the principal axis",
+    d: "None of these",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q12. The point of intersection of the principal plane with the axis of the lens is called….",
+    a: "The optical center of the lens",
+    b: "Pole of the lens",
+    c: "Focus",
+    d: "Radius of curvature",
+    ans: "ans1"
+    },
+    
+    {
+    question: "Q13. The point at which the axis of the lens cut the surface of the lens is called ….",
+    a: "The optical center of the lens",
+    b: "Pole of the lens",
+    c: "Focus",
+    d: "None of these",
+    ans: "ans2"
+    },
+    
+    {
+    question: "Q14.  Distances measured to the right of the pole or optical center and those to the left of the pole or optical center are ……and …… respectively.",
+    a: "Positive, Negative",
+    b: "Negative, Positive",
+    c: "Positive, Positive",
+    d: "Negative, Negative",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q15. The linear magnification is given by ….",
+    a: "Image distance/object distance",
+    b: "Object distance/image distance",
+    c: "The size of the object/the size of the image",
+    d: "None of these",
+    ans: "ans1"
+    },
+];
+
+
+    const question = document.querySelector('.question');
+    const option1 = document.querySelector('#option1');
+    const option2 = document.querySelector('#option2');
+    const option3 = document.querySelector('#option3');
+    const option4 = document.querySelector('#option4');
+    const submit = document.querySelector('#submit');
+    const answers = document.querySelectorAll('.answer');
+    const showScore = document.querySelector('#showScore');
+
+    let questionCount = 0;
+    let score = 0;
+
+    const loadQuestion = () => {
+        const questionList = quizdata[questionCount];
+        question.innerText = questionList.question;
+        option1.innerText = questionList.a;
+        option2.innerText = questionList.b;
+        option3.innerText = questionList.c;
+        option4.innerText = questionList.d;
+        showScore.innerHTML = `
+        <h3>Question ${questionCount + 1}/${quizdata.length}</h3>
+    `
+    }
+
+    loadQuestion();
+    function getCheckAnswer() {
+        let answer;
+        answers.forEach((currentAnswer) => {
+            if (currentAnswer.checked) {
+                answer = currentAnswer.id;
+            }
+
+        });
+        return answer;
+    }
+
+    const deSelectOptions = () => {
+        answers.forEach((currentAnswer) => {
+            currentAnswer.checked = false;
+        })
+    }
+
+    submit.addEventListener('click', () => {
+        const checkAnswer = getCheckAnswer();
+
+        if (checkAnswer === quizdata[questionCount].ans) {
+            score++;
+            console.log(score);
+        };
+
+        questionCount += 1;
+        if (questionCount < quizdata.length) {
+            deSelectOptions();
+            loadQuestion();
+        }
+        else {
+            showScore.innerHTML = `
+           <h3> Your Score:  ${score}/${quizdata.length} </h3>
+           <h3> Correct: ${score}&nbsp&nbsp&nbsp&nbspIncorrect: ${quizdata.length - score} </h3>
+           <div id="button2"><button class="btn" onclick="location.reload()">Restart</button></div>           
+        `;
+
+            // showScore.classList.remove('scoreArea');
+        }
+    });
+
+
+
+
+
+</script>

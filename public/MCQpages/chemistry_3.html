@@ -1,0 +1,331 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+    * {
+        top: 0px;
+        margin: 0px;
+    }
+
+    #test {
+        background-color: rgb(226 241 255);
+        height: 100vh;
+        border-radius: 8px;
+    }
+
+    .main {
+        height: 85vh;
+        width: 90vw;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main ul {
+        display: contents;
+    }
+
+    .main h2 {
+        font-family: 'Ubuntu', sans-serif;
+        margin-top: 0.5rem;
+    }
+
+    .main ul li {
+        font-family: 'Roboto Condensed', sans-serif;
+        list-style: none;
+        margin: 0.5rem;
+    }
+
+    #button {
+        display: flex;
+        justify-content: center;
+    }
+
+    #button2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        width: fit-content;
+        /* margin: 1rem 10rem; */
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+    }
+
+    #showScore {
+        height: 25vh;
+        background-color: #eefaff;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+
+    #showScore h3 {
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+
+    .btn {
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+</style>
+
+
+
+<section id="test">
+    <div class="main">
+        <h2 class="question">Q1. will be here what is the full form </h2>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="ans1" class="answer">
+                <label for="ans1" id="option1">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans2" class="answer">
+                <label for="ans2" id="option2">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans3" class="answer">
+                <label for="ans3" id="option3">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans4" class="answer">
+                <label for="ans4" id="option4">Answer</label>
+            </li>
+        </ul>
+        <div id="button">
+            <button id="submit">Submit</button>
+        </div>
+        <div id="showScore" class="scoreArea">
+
+        </div>
+    </div>
+</section>
+
+<script>
+    //javascript for mcq ection    
+
+    const quizdata = [
+        {
+            question: "Q1. Who proposed the atomic theory?",
+            a: "John Dalton.",
+            b: "Robert Millikan.",
+            c: "J. J. Thomson.",
+            d: "Neils Bohr.",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q2. The correct electronic configuration of element having atomic number 20 is",
+            a: "2, 6, 6, 2",
+            b: "2, 8, 8, 2",
+            c: "2, 4, 6, 2",
+            d: "2, 4, 6, 2",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q3. An atom differs from an ion as",
+            a: "Number of protons.",
+            b: "Nuclear charge.",
+            c: "Number of electrons.",
+            d: "Mass number.",
+            ans: "ans3"
+        },
+
+
+        {
+            question: "Q4. Which of the following corresponds to the line spectrum of hydrogen obtained in the visible region of light?",
+            a: "Lyman series",
+            b: "Balmer series",
+            c: "Paschen series",
+            d: "Brackett series",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q5. What will be the possible energy value of the excited state for electron in Bohr orbitals of hydrogen is ,(Given energy of electron in the first Bohr orbit of H atom is 13.6 eV.)",
+            a: "– 3.4 eV",
+            b: "-4.2eV",
+            c: "– 6.8 eV",
+            d: "+ 6.8 eV",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q6. Given energy = 2.91 × 10-19], h = 6.36 × 10-34 Js, c = 3.0 × 108 m/s ,Then what will be the wavelength of light?",
+            a: "6.56 nm",
+            b: "656 nm",
+            c: "0.656 nm",
+            d: "65.6 nm",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q7. Specification of Magnetic quantum number is",
+            a: "orbital size",
+            b: "orbital shape",
+            c: "orbital orientation",
+            d: "nuclear stability",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q8. Write The correct sequence to label the subshells in an atom is",
+            a: "S, p, d, f, g",
+            b: "S, p, p, f, d",
+            c: "S, s, p, p, d, f, g",
+            d: "S, p, g, d, f",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q9. Generally Cathode rays are known as",
+            a: "protons",
+            b: "electrons",
+            c: "neutrons",
+            d: "a-particles",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q10. Except which of the following, neutrons are present in all atoms?",
+            a: "H",
+            b: "Ar",
+            c: "He",
+            d: "Ne",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q11.  The non-integral atomic masses having by many elements is due to",
+            a: "they have isobars",
+            b: "their isotopes have non-integral masses",
+            c: "their isotopes have different masses",
+            d: "the constituents, neutrons, protons and electrons. combine to give fractional masses.",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q12. What is the ratio of charge to mass that was determined by J.J Thomson (in coulombs per gram)",
+            a: "-1.76 10⁸coulombs/ g",
+            b: "1.76 10-⁸ coulombs/g",
+            c: "-1.76x 10¹⁰ coulombs/g",
+            d: "-1.76×10-¹⁰ coulombs /g.",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q13. Rutherford’s scattering experiment explains about",
+            a: "the size nucleus",
+            b: "size electron",
+            c: "radius of atom",
+            d: "radius neutron",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q14.  Which established the nuclear model of the atom used a beam of(basis of Rutherford’s theory)",
+            a: "bita-particles, which impinged on a metal  foil .",
+            b: " Bita-rays, which impinged on a metal foil and ejected electron",
+            c: "helium atoms, which impinged on a metal foil andst scallered",
+            d: "helium nuclei, which impinged on a metal fail and got scallerod",
+            ans: "ans4"
+        },
+
+        {
+            question: "Q15.  If value of l = 0, the shape of the orbital is",
+            a: "Rectangular",
+            b: "Spherical",
+            c: "Dumbbell",
+            d: "Unsymmetrical",
+            ans: "ans2"
+        },
+    ];
+
+
+    const question = document.querySelector('.question');
+    const option1 = document.querySelector('#option1');
+    const option2 = document.querySelector('#option2');
+    const option3 = document.querySelector('#option3');
+    const option4 = document.querySelector('#option4');
+    const submit = document.querySelector('#submit');
+    const answers = document.querySelectorAll('.answer');
+    const showScore = document.querySelector('#showScore');
+
+    let questionCount = 0;
+    let score = 0;
+
+    const loadQuestion = () => {
+        const questionList = quizdata[questionCount];
+        question.innerText = questionList.question;
+        option1.innerText = questionList.a;
+        option2.innerText = questionList.b;
+        option3.innerText = questionList.c;
+        option4.innerText = questionList.d;
+        showScore.innerHTML = `
+        <h3>Question ${questionCount + 1}/${quizdata.length}</h3>
+    `
+    }
+
+    loadQuestion();
+    function getCheckAnswer() {
+        let answer;
+        answers.forEach((currentAnswer) => {
+            if (currentAnswer.checked) {
+                answer = currentAnswer.id;
+            }
+
+        });
+        return answer;
+    }
+
+    const deSelectOptions = () => {
+        answers.forEach((currentAnswer) => {
+            currentAnswer.checked = false;
+        })
+    }
+
+    submit.addEventListener('click', () => {
+        const checkAnswer = getCheckAnswer();
+
+        if (checkAnswer === quizdata[questionCount].ans) {
+            score++;
+            console.log(score);
+        };
+
+        questionCount += 1;
+        if (questionCount < quizdata.length) {
+            deSelectOptions();
+            loadQuestion();
+        }
+        else {
+            showScore.innerHTML = `
+           <h3> Your Score:  ${score}/${quizdata.length} </h3>
+           <h3> Correct: ${score}&nbsp&nbsp&nbsp&nbspIncorrect: ${quizdata.length - score} </h3>
+           <div id="button2"><button class="btn" onclick="location.reload()">Restart</button></div>           
+        `;
+
+            // showScore.classList.remove('scoreArea');
+        }
+    });
+
+
+
+
+
+</script>

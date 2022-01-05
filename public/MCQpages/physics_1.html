@@ -1,0 +1,329 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+    * {
+        top: 0px;
+        margin: 0px;
+    }
+
+    #test {
+        background-color: rgb(226 241 255);
+        height: 100vh;
+        border-radius: 8px;
+    }
+
+    .main {
+        height: 85vh;
+        width: 90vw;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main ul {
+        display: contents;
+    }
+
+    .main h2 {
+        font-family: 'Ubuntu', sans-serif;
+        margin-top: 0.5rem;
+    }
+
+    .main ul li {
+        font-family: 'Roboto Condensed', sans-serif;
+        list-style: none;
+        margin: 0.5rem;
+    }
+
+    #button {
+        display: flex;
+        justify-content: center;
+    }
+
+    #button2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        width: fit-content;
+        /* margin: 1rem 10rem; */
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+    }
+
+    #showScore {
+        height: 25vh;
+        background-color: #eefaff;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+
+    #showScore h3 {
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+
+    .btn {
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+</style>
+
+
+
+<section id="test">
+    <div class="main">
+        <h2 class="question">Q1. will be here what is the full form of CSS?</h2>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="ans1" class="answer">
+                <label for="ans1" id="option1">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans2" class="answer">
+                <label for="ans2" id="option2">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans3" class="answer">
+                <label for="ans3" id="option3">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans4" class="answer">
+                <label for="ans4" id="option4">Answer</label>
+            </li>
+        </ul>
+        <div id="button">
+            <button id="submit">Submit</button>
+        </div>
+        <div id="showScore" class="scoreArea">
+
+        </div>
+    </div>
+</section>
+
+<script>
+    //javascript for mcq ection    
+
+    const quizdata = [
+    {
+    question: "Q1. A man presses more weight on earth at :",
+    a: "Sitting position",
+    b: "Standing Position",
+    c: "Lying Position",
+    d: "None of these",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q2. A piece of ice is dropped in a vesel containing kerosene. When ice melts, the level of kerosene will",
+    a: "Rise",
+    b: "Fall",
+    c: "Remain Same",
+    d: "None of these",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q3. Young's modulus is the property of",
+    a: "Gas only",
+    b: "Both Solid and Liquid",
+    c: "Liquid only",
+    d: "Solid only",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q4. An artificial Satellite revolves round the Earth in circular orbit, which quantity remains constant?",
+    a: "Angular Momentum",
+    b: "Linear Velocity",
+    c: "Angular Displacement",
+    d: "None of these",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q5. If electrical conductivity increases with the increase of temperature of a substance, then it is a:",
+    a: "Conductor",
+    b: "Semiconductor",
+    c: "Insulator",
+    d: "Carborator",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q6. Product of Force and Velocity is called:",
+    a: "Work",
+    b: "Power",
+    c: "Energy",
+    d: "Momentum",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q7. Which one of the following has the highest value of specific heat ?",
+    a: "Alcohol",
+    b: "Methane",
+    c: "Kerosene",
+    d: "Water",
+    },
+
+    {
+    question: "Q8. With the increase of pressure, the boiling point of any substance",
+    a: "Increases",
+    b: "Decreases",
+    c: "Remains Same",
+    d: "Becomes zero",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q9. Elecronegativity is the measure of",
+    a: "Metallic character",
+    b: "Non-metallic character",
+    c: "Basic Character",
+    d: "None of these",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q10. The rotational effect of a force on a body about an axis of rotation is described in terms of the",
+    a: "Centre of gravity",
+    b: "Centripetal force",
+    c: "Centrifugal force",
+    d: "Moment of force",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q11. If no external force acts on a system of bodies, the total linear momentum of the system of bodies remains constant. Which law states that ?",
+    a: "Newton's first law",
+    b: "Newton's Second Law",
+    c: "Newton's Third Law",
+    d: "Principle of conservation of linear momentum",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q12. Which law is also called the law of inertia ?",
+    a: "Newton's first law",
+    b: "Newton's Second Law",
+    c: "Newton's Third Law",
+    d: "All of these",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q13. What is the unit of Astronomical Distance ?",
+    a: "Light year",
+    b: "Angstrom",
+    c: "Weber",
+    d: "Lux",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q14. Energy possessed by a body in motion is called",
+    a: "Kinetic Energy",
+    b: "Potential Energy",
+    c: "Both A and B",
+    d: "None of these",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q15. The electric motor converts",
+    a: "Electrical energy into mechanical energy",
+    b: "Mechanical energy into electrical energy",
+    c: "Electrical energy into light energy",
+    d: "None of these",
+    ans: "ans1"
+    },
+];
+
+
+    const question = document.querySelector('.question');
+    const option1 = document.querySelector('#option1');
+    const option2 = document.querySelector('#option2');
+    const option3 = document.querySelector('#option3');
+    const option4 = document.querySelector('#option4');
+    const submit = document.querySelector('#submit');
+    const answers = document.querySelectorAll('.answer');
+    const showScore = document.querySelector('#showScore');
+
+    let questionCount = 0;
+    let score = 0;
+
+    const loadQuestion = () => {
+        const questionList = quizdata[questionCount];
+        question.innerText = questionList.question;
+        option1.innerText = questionList.a;
+        option2.innerText = questionList.b;
+        option3.innerText = questionList.c;
+        option4.innerText = questionList.d;
+        showScore.innerHTML = `
+        <h3>Question ${questionCount + 1}/${quizdata.length}</h3>
+    `
+    }
+
+    loadQuestion();
+    function getCheckAnswer() {
+        let answer;
+        answers.forEach((currentAnswer) => {
+            if (currentAnswer.checked) {
+                answer = currentAnswer.id;
+            }
+
+        });
+        return answer;
+    }
+
+    const deSelectOptions = () => {
+        answers.forEach((currentAnswer) => {
+            currentAnswer.checked = false;
+        })
+    }
+
+    submit.addEventListener('click', () => {
+        const checkAnswer = getCheckAnswer();
+
+        if (checkAnswer === quizdata[questionCount].ans) {
+            score++;
+            console.log(score);
+        };
+
+        questionCount += 1;
+        if (questionCount < quizdata.length) {
+            deSelectOptions();
+            loadQuestion();
+        }
+        else {
+            showScore.innerHTML = `
+           <h3> Your Score:  ${score}/${quizdata.length} </h3>
+           <h3> Correct: ${score}&nbsp&nbsp&nbsp&nbspIncorrect: ${quizdata.length - score} </h3>
+           <div id="button2"><button class="btn" onclick="location.reload()">Restart</button></div>           
+        `;
+
+            // showScore.classList.remove('scoreArea');
+        }
+    });
+
+
+
+
+
+</script>

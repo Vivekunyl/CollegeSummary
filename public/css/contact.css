@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');  /*For blog Section*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+#navbar{
+    background-color: #404952;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    width:100vw;
+    height:16vh;
+    overflow:hidden;
+    position: relative;
+    /* background-color:#f8f8f8; */
+}
+#logo{
+    margin-right: 4rem;
+    margin-top: 1.1rem;
+    margin-bottom: 1.1rem;
+}
+#logo img{
+    height:5rem;
+    width:5.5rem;
+}
+#navbar ul{
+    display:flex;
+}
+#navbar ul li{
+    list-style:none;
+}
+#navbar ul li a{
+    font-family: 'Ubuntu', sans-serif;
+    display: block;
+    text-decoration:none;
+    color:#ffffff;
+    padding: 38px 30px;
+    border-radius:5px;
+
+}
+#navbar ul li a:hover{
+    background-color:#034079;
+    color:#f6f6f6;
+    transition-duration: 0.5s;
+}
+
+.items{
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+
+/* Css for contact form */
+
+.form_section{
+    height:70vh;
+    width:100vw;
+    display:flex;
+    justify-content: center;
+}
+
+.formArea{
+    margin-top: auto;
+    background-color:#404952;
+    height:62vh;
+    width:50vw;
+    border-radius:10px;
+    box-shadow: 10px 10px 15px #888888;
+}
+
+.formArea h2{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    align-content: center;
+    color: white;
+    margin-top:1rem
+}
+
+
+.container{
+    background-color: #404952;
+    height:55vh;
+    width:50vw;
+    display: flex;
+    flex-direction: column;
+    border-radius:10px;
+}
+
+.inputArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formField{
+    font-family: 'Ubuntu', sans-serif;
+    width: fit-content;
+    margin: 0.5rem auto;
+    color:white;
+}
+
+.inputArea input{
+    font-family: 'Ubuntu', sans-serif;
+    width: 60%;
+    border: 0px;
+    border-bottom: 2px solid rgb(255, 253, 253);
+    color: white;
+    background-color: #404952;
+    outline: none;
+    margin: 0rem auto;
+}
+
+.inputArea textArea{
+    font-family: 'Ubuntu', sans-serif;
+    width: 65%;
+    margin:1rem auto 0rem auto;
+    background-color: #4b535c;
+    outline: none;
+    border: 0px;
+    color:white;
+}
+
+
+button{
+    width: fit-content;
+    margin: 0.5rem auto;
+    padding:0.5rem;
+    border: 0px;
+    border-radius:4px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: #b3b8bd;
+    color:white;
+}
+
+
+
+/* MEDIA QUERY */
+
+@media only screen and (max-width:800px) and (min-width:600px){
+    
+    #navbar{
+        flex-direction:column;
+        height:23vh;
+    }
+    #logo{
+        margin-bottom:0.5rem;
+    }
+    #navbar ul li a{
+        padding: 10px 30px;
+    }
+}
+
+@media only screen and (max-width:600px) and (min-width:400px){
+    #navbar {
+        flex-direction:column;
+        height:20vh;
+    }
+    #logo {
+        margin-right: 3rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    #logo img {
+        height: 4rem;
+        width: 5rem;
+    }
+    #navbar ul li a {
+        padding: 10px 6px;
+        border-radius: 4px;
+        font-size: 15px;    
+    }
+
+    .formArea{
+        height: 65vh;
+        width: 70vw;
+    }
+
+    .container {
+        height: 55vh;
+        width: 70vw;
+    }
+
+
+}
+
+@media only screen and (max-width:400px) and (min-width:330px){
+    #navbar {
+        flex-direction:column;
+        height:20vh;
+    }
+    #logo {
+        margin-right: 3rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    #logo img {
+        height: 4rem;
+        width: 5rem;
+    }
+    #navbar ul li a {
+        padding: 10px 6px;
+        border-radius: 4px;
+        font-size: 14px;    
+    }
+
+    .formArea{
+        margin-top: 2rem;
+        height: 70vh;
+        width: 85vw;
+    }
+
+    .container{
+        height: 63vh;
+        width: 85vw;
+    }
+
+    .inputArea input{
+        width: 70%;
+    }
+
+    .inputArea textArea{
+        width:70%;
+    }
+}

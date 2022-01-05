@@ -1,0 +1,330 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+    * {
+        top: 0px;
+        margin: 0px;
+    }
+
+    #test {
+        background-color: rgb(226 241 255);
+        height: 100vh;
+        border-radius: 8px;
+    }
+
+    .main {
+        height: 85vh;
+        width: 90vw;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main ul {
+        display: contents;
+    }
+
+    .main h2 {
+        font-family: 'Ubuntu', sans-serif;
+        margin-top: 0.5rem;
+    }
+
+    .main ul li {
+        font-family: 'Roboto Condensed', sans-serif;
+        list-style: none;
+        margin: 0.5rem;
+    }
+
+    #button {
+        display: flex;
+        justify-content: center;
+    }
+
+    #button2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        width: fit-content;
+        /* margin: 1rem 10rem; */
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+    }
+
+    #showScore {
+        height: 25vh;
+        background-color: #eefaff;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+
+    #showScore h3 {
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+
+    .btn {
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+</style>
+
+
+
+<section id="test">
+    <div class="main">
+        <h2 class="question">Q1. will be here what is the full form of CSS?</h2>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="ans1" class="answer">
+                <label for="ans1" id="option1">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans2" class="answer">
+                <label for="ans2" id="option2">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans3" class="answer">
+                <label for="ans3" id="option3">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans4" class="answer">
+                <label for="ans4" id="option4">Answer</label>
+            </li>
+        </ul>
+        <div id="button">
+            <button id="submit">Submit</button>
+        </div>
+        <div id="showScore" class="scoreArea">
+
+        </div>
+    </div>
+</section>
+
+<script>
+    //javascript for mcq ection    
+
+    const quizdata = [
+    {
+    question: "Q1. SI unit of the power of a lens is",
+    a: "Diopter",
+    b: "Horse power",
+    c: "Hertz",
+    d: "Watt",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q2. ln physics, a radian per second is a unit of",
+    a: "angular displacement",
+    b: "angular velocity",
+    c: "angular acceleration",
+    d: "angular momentum",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q3. A body of mass m moving with velocity u collides with a stationary body of mass 2m and coalesce to form one body. The speed of the system after collision, is",
+    a: "3u",
+    b: "u/3",
+    c: "2u",
+    d: "u/4",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q4. For an object moving in uniform circular motion with constant speed. The direction of The instantaneous acceleration vector is",
+    a: "tangent to the path of motion",
+    b: "equal to zero",
+    c: "directed radially outward",
+    d: "directed radially, inward",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q5. The acceleration due to gravity on the moon is 1.6 meters per Second Square. On the moon, the time period of a pendulum whose length is 6.4 meters will be",
+    a: "π seconds",
+    b: "2π seconds",
+    c: "4π seconds",
+    d: "8π seconds",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q6. Bernoulli’s Principle is a statement of",
+    a: "energy conservation in dynamic fluids.",
+    b: "momentum conservation in dynamic fluids.",
+    c: "hydrostatic equilibrium",
+    d: "thermal equilibrium in fluids.",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q7. ln any collision, the parameter which is conserved is",
+    a: "kinetic energy",
+    b: "angular momentum",
+    c: "linear momentum",
+    d: "potential energy",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q8. The work done by any friction force is:",
+    a: "always positive",
+    b: "always negative",
+    c: "always zero",
+    d: "either positive or negative depending upon the situation",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q9. A person moves 3m towards East and then 4m towards North. The resultant displacement from the initial position to final position is",
+    a: "7m",
+    b: "5m",
+    c: "4m",
+    d: "1m",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q10. Two physical quantities having the same dimensions are",
+    a: "Force and energy",
+    b: "Work and torque",
+    c: "Pressure and power",
+    d: "Impulse and momentum",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q11. In a uniform circular motion",
+    a: "Velocity and acceleration both are constant",
+    b: "Acceleration and speed are constant but velocity changes",
+    c: "Acceleration and velocity both change",
+    d: "Acceleration and speed both are constant",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q12. If the radius of the earth were to shrink, its mass remaining the same, the value of acceleration due to gravity at the pole and at the equator will",
+    a: "Increase and decrease respectively",
+    b: "Decrease and increase respectively",
+    c: "Increase at both places",
+    d: "Decrease at both places",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q13. Lorentz transformation equations hold for",
+    a: "Non-relativistic velocities only",
+    b: "Relativistic velocities only",
+    c: "All velocities: relativistic & non-relativistic",
+    d: "Photons only",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q14. A particle is dropped from a point above the earth. The ratio of the distance travelled in the first two seconds and in the next two seconds is",
+    a: "1:1",
+    b: "1:2",
+    c: "1:3",
+    d: "1:4",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q15. Relative to its period on the earth, the period a pendulum on the moon is",
+    a: "Shorter",
+    b: "Longer",
+    c: "The same as on the earth",
+    d: "Varies with time",
+    ans: "ans2"
+    },
+];
+
+
+    const question = document.querySelector('.question');
+    const option1 = document.querySelector('#option1');
+    const option2 = document.querySelector('#option2');
+    const option3 = document.querySelector('#option3');
+    const option4 = document.querySelector('#option4');
+    const submit = document.querySelector('#submit');
+    const answers = document.querySelectorAll('.answer');
+    const showScore = document.querySelector('#showScore');
+
+    let questionCount = 0;
+    let score = 0;
+
+    const loadQuestion = () => {
+        const questionList = quizdata[questionCount];
+        question.innerText = questionList.question;
+        option1.innerText = questionList.a;
+        option2.innerText = questionList.b;
+        option3.innerText = questionList.c;
+        option4.innerText = questionList.d;
+        showScore.innerHTML = `
+        <h3>Question ${questionCount + 1}/${quizdata.length}</h3>
+    `
+    }
+
+    loadQuestion();
+    function getCheckAnswer() {
+        let answer;
+        answers.forEach((currentAnswer) => {
+            if (currentAnswer.checked) {
+                answer = currentAnswer.id;
+            }
+
+        });
+        return answer;
+    }
+
+    const deSelectOptions = () => {
+        answers.forEach((currentAnswer) => {
+            currentAnswer.checked = false;
+        })
+    }
+
+    submit.addEventListener('click', () => {
+        const checkAnswer = getCheckAnswer();
+
+        if (checkAnswer === quizdata[questionCount].ans) {
+            score++;
+            console.log(score);
+        };
+
+        questionCount += 1;
+        if (questionCount < quizdata.length) {
+            deSelectOptions();
+            loadQuestion();
+        }
+        else {
+            showScore.innerHTML = `
+           <h3> Your Score:  ${score}/${quizdata.length} </h3>
+           <h3> Correct: ${score}&nbsp&nbsp&nbsp&nbspIncorrect: ${quizdata.length - score} </h3>
+           <div id="button2"><button class="btn" onclick="location.reload()">Restart</button></div>           
+        `;
+
+            // showScore.classList.remove('scoreArea');
+        }
+    });
+
+
+
+
+
+</script>

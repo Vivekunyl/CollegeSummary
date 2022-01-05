@@ -1,0 +1,13 @@
+<h2 class="text-center">GBPIET</h2>
+<hr>
+<p>Gobind Ballabh Pant Institute of Engineering and Technology [2] was established by the Government of Uttar Pradesh in 1989. It started its first academic session in 1991. The institute is affiliated to Uttarakhand Technical University, Dehradun.[3] since 2006.
+It is located about 11 km from Pauri, the District headquarters and is about 33 km from Dev Prayag, a historical and pilgrimage place. When the weather is clear a panoramic view of Himalaya as well as a short view of Srinagar can be seen from GBPIET. The college is financed by the Government of Uttarakhand and managed by the Board of Governors with the Minister of Technical Education, Government of Uttarakhand, as the Chairman.</p>
+<img src="images/GBPIET.jpg" alt="">
+
+<p>Govind Ballabh Pant Institute of Engineering and Technology (or GBPIET) (formerly known as Govind Ballabh Pant Engineering College before August 2017) is an autonomous institution for higher technical education located in Ghurdauri of Pauri Garhwal district, in the north Indian state of Uttarakhand. College run by the government of Uttarakhand, India. It was created in 1989 and named after memory of the first Chief Minister of Uttar Pradesh, statesman and Bharat Ratna recipient Pandit Govind Ballabh Pant.</p>
+<span class="gap"></span>
+<p>
+    The institute offers courses in MCA, M. Tech, and B. Tech. The college provides seven undergraduate, five postgraduate, and six doctoral courses.
+
+</p>
+<p>You can visit the site by </p><a href="http://www.gbpec.ac.in/" target="_blank">Clicking here.</a>

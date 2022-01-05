@@ -1,0 +1,330 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+    * {
+        top: 0px;
+        margin: 0px;
+    }
+
+    #test {
+        background-color: rgb(226 241 255);
+        height: 100vh;
+        border-radius: 8px;
+    }
+
+    .main {
+        height: 85vh;
+        width: 90vw;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main ul {
+        display: contents;
+    }
+
+    .main h2 {
+        font-family: 'Ubuntu', sans-serif;
+        margin-top: 0.5rem;
+    }
+
+    .main ul li {
+        font-family: 'Roboto Condensed', sans-serif;
+        list-style: none;
+        margin: 0.5rem;
+    }
+
+    #button {
+        display: flex;
+        justify-content: center;
+    }
+
+    #button2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        width: fit-content;
+        /* margin: 1rem 10rem; */
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+    }
+
+    #showScore {
+        height: 25vh;
+        background-color: #eefaff;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+
+    #showScore h3 {
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+
+    .btn {
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+</style>
+
+
+
+<section id="test">
+    <div class="main">
+        <h2 class="question">Q1. will be here what is the full form of CSS?</h2>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="ans1" class="answer">
+                <label for="ans1" id="option1">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans2" class="answer">
+                <label for="ans2" id="option2">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans3" class="answer">
+                <label for="ans3" id="option3">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans4" class="answer">
+                <label for="ans4" id="option4">Answer</label>
+            </li>
+        </ul>
+        <div id="button">
+            <button id="submit">Submit</button>
+        </div>
+        <div id="showScore" class="scoreArea">
+
+        </div>
+    </div>
+</section>
+
+<script>
+    //javascript for mcq ection    
+
+    const quizdata = [
+    {
+    question: "Q1. Curie is a unit of",
+    a: " Radioactivity",
+    b: " Energy of gamma rays",
+    c: "Intensity of gamma rays",
+    d: "Half-life",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q2. Gamma rays are",
+    a: "Electromagnetic waves",
+    b: "Helium nucleus",
+    c: "Fast moving electron",
+    d: "Single ionized gas atom",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q3. Nuclear forces are mediated by",
+    a: "Proton",
+    b: "Neutron",
+    c: "Meson",
+    d: "Electron",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q4. The fuel used in nuclear power plants is",
+    a: "U-235",
+    b: "U-236",
+    c: "U-238",
+    d: "U-239",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q5. An atomic pile is used for",
+    a: "Temperature",
+    b: "Conducting nuclear fission",
+    c: "Conducting thermonuclear fission",
+    d: "Producing X-rays",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q6. An atom bomb is based upon the principle of",
+    a: "Controlled nuclear fission",
+    b: "Nuclear fusion",
+    c: "Nuclear fission",
+    d: "None of the above",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q7. The mass defect per nucleon is called",
+    a: "Binding energy",
+    b: "Packing fraction",
+    c: "Ionization energy",
+    d: "Excitation energy",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q8. Nuclear forces are",
+    a: "Attractive or repulsive depending upon separation between nucleons",
+    b: "Neither attractive nor repulsive",
+    c: "Attractive only",
+    d: "Repulsive only",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q9. The fourth state of matter is known as",
+    a: "Electrons",
+    b: "Gas",
+    c: "Vapour",
+    d: "Plasma",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q10. If a U-238 nucleus splits into two identical parts, the two nuclei so produced will be",
+    a: "Radioactive",
+    b: "Stable",
+    c: "Isobars",
+    d: "Isotopes",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q11. Which of the following will deflect in electric field?",
+    a: "X-rays",
+    b: "Y-rays",
+    c: "Ultraviolet rays",
+    d: "Cathode rays",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q12. Cathode rays enter an electric field normal to the lines of force. Then their path in the electric field is",
+    a: "Parabola",
+    b: "Straight line",
+    c: "Circle",
+    d: "Ellipse",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q13. Cathode rays can be deflected by",
+    a: "Magnetic field",
+    b: "Electric fields",
+    c: "Both electric and magnetic fields",
+    d: "None of the above",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q14. The velocity of photo electron emitted in photoelectric effect depends only on",
+    a: "The wave length of incident light",
+    b: "The frequency and intensity of incident light",
+    c: "The frequency of incident light",
+    d: "None of these",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q15. Which of the particles has similar mass to that of the electron?",
+    a: "Neutrino",
+    b: "Positron",
+    c: "Neutron",
+    d: "Proton",
+    ans: "ans2"
+    },
+];
+
+
+    const question = document.querySelector('.question');
+    const option1 = document.querySelector('#option1');
+    const option2 = document.querySelector('#option2');
+    const option3 = document.querySelector('#option3');
+    const option4 = document.querySelector('#option4');
+    const submit = document.querySelector('#submit');
+    const answers = document.querySelectorAll('.answer');
+    const showScore = document.querySelector('#showScore');
+
+    let questionCount = 0;
+    let score = 0;
+
+    const loadQuestion = () => {
+        const questionList = quizdata[questionCount];
+        question.innerText = questionList.question;
+        option1.innerText = questionList.a;
+        option2.innerText = questionList.b;
+        option3.innerText = questionList.c;
+        option4.innerText = questionList.d;
+        showScore.innerHTML = `
+        <h3>Question ${questionCount + 1}/${quizdata.length}</h3>
+    `
+    }
+
+    loadQuestion();
+    function getCheckAnswer() {
+        let answer;
+        answers.forEach((currentAnswer) => {
+            if (currentAnswer.checked) {
+                answer = currentAnswer.id;
+            }
+
+        });
+        return answer;
+    }
+
+    const deSelectOptions = () => {
+        answers.forEach((currentAnswer) => {
+            currentAnswer.checked = false;
+        })
+    }
+
+    submit.addEventListener('click', () => {
+        const checkAnswer = getCheckAnswer();
+
+        if (checkAnswer === quizdata[questionCount].ans) {
+            score++;
+            console.log(score);
+        };
+
+        questionCount += 1;
+        if (questionCount < quizdata.length) {
+            deSelectOptions();
+            loadQuestion();
+        }
+        else {
+            showScore.innerHTML = `
+           <h3> Your Score:  ${score}/${quizdata.length} </h3>
+           <h3> Correct: ${score}&nbsp&nbsp&nbsp&nbspIncorrect: ${quizdata.length - score} </h3>
+           <div id="button2"><button class="btn" onclick="location.reload()">Restart</button></div>           
+        `;
+
+            // showScore.classList.remove('scoreArea');
+        }
+    });
+
+
+
+
+
+</script>

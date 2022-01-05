@@ -1,0 +1,330 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+    * {
+        top: 0px;
+        margin: 0px;
+    }
+
+    #test {
+        background-color: rgb(226 241 255);
+        height: 100vh;
+        border-radius: 8px;
+    }
+
+    .main {
+        height: 85vh;
+        width: 90vw;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main ul {
+        display: contents;
+    }
+
+    .main h2 {
+        font-family: 'Ubuntu', sans-serif;
+        margin-top: 0.5rem;
+    }
+
+    .main ul li {
+        font-family: 'Roboto Condensed', sans-serif;
+        list-style: none;
+        margin: 0.5rem;
+    }
+
+    #button {
+        display: flex;
+        justify-content: center;
+    }
+
+    #button2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        width: fit-content;
+        /* margin: 1rem 10rem; */
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+    }
+
+    #showScore {
+        height: 25vh;
+        background-color: #eefaff;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+
+    #showScore h3 {
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+
+    .btn {
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+</style>
+
+
+
+<section id="test">
+    <div class="main">
+        <h2 class="question">Q1. will be here what is the full form of CSS?</h2>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="ans1" class="answer">
+                <label for="ans1" id="option1">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans2" class="answer">
+                <label for="ans2" id="option2">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans3" class="answer">
+                <label for="ans3" id="option3">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans4" class="answer">
+                <label for="ans4" id="option4">Answer</label>
+            </li>
+        </ul>
+        <div id="button">
+            <button id="submit">Submit</button>
+        </div>
+        <div id="showScore" class="scoreArea">
+
+        </div>
+    </div>
+</section>
+
+<script>
+    //javascript for mcq ection    
+
+    const quizdata = [
+        {
+            question: "Q1. What is the increasing order for the values of e/m for",
+            a: "e, p, n, α",
+            b: "n, p, e, α",
+            c: "n, p, α, e",
+            d: "n, α, p, e",
+            ans: "ans4"
+        },
+
+        {
+            question: "Q2. Mass of an atom is equals to which of the following",
+            a: "Only protons.",
+            b: "Only neutrons.",
+            c: "Neutrons and protons.",
+            d: "Protons and electrons.",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q3. During oxidation process electrons are:",
+            a: "Lost",
+            b: "Gained",
+            c: "Paired up",
+            d: "remains same",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q4. The process of heating the concentrated ore in a limited supply of air or in the absence of air is known as:",
+            a: "Roasting",
+            b: "Leaching",
+            c: "Calcination",
+            d: "Cupellation",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q5. What is the source of UV radiation?",
+            a: "Hydrogen gas discharge lamp",
+            b: "RF oscillator",
+            c: "Klystron oscillator",
+            d: "Nernst Filament",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q6. -Which transitions are studied by UV spectrometer?",
+            a: "Rotational",
+            b: "Electronic",
+            c: "Nuclear",
+            d: "Vibrational",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q7. One nm is equal to:",
+            a: "10^-7 cm",
+            b: "10^-8 cm",
+            c: "10^-9 cm",
+            d: "10^-10 cm",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q8. The structure of sulphur dioxide molecule (SO2) may be given as:",
+            a: "Tetrahedral",
+            b: "Bent",
+            c: "Linear",
+            d: "Plane triangle",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q9. An SN1 reaction results in:",
+            a: "Retention",
+            b: "Racemisation",
+            c: "Inversion",
+            d: "Elimination",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q10. Average kinetic energy per molecule is:",
+            a: "(3/2)kT",
+            b: "(3/2)RT",
+            c: "(½)kT",
+            d: "(1/2)RT",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q11. For one mole of gas Cp and Cv relations are:",
+            a: "Cp = Cv",
+            b: "Cp = Cv – R",
+            c: "Cp = Cv + R",
+            d: "Cp = Cv·R",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q12. The compressibility factor for ideal gas is:",
+            a: "Zero",
+            b: "1",
+            c: "> 1",
+            d: "< 1",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q13. The value of PcVc/RTc is:",
+            a: "8.314",
+            b: "0.375",
+            c: "2.000",
+            d: "0.082",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q14. Which of the following is not true for zero order reaction?",
+            a: "Rate = Rate constant",
+            b: "Rate is independent of concentrations",
+            c: "Rate does not change with time",
+            d: "Rate increase with increase in concentrations",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q15. The cell in which electrical energy is converted to chemical energy is:",
+            a: "Galvanic cell",
+            b: "Voltaic cell",
+            c: "Electrolytic cell",
+            d: "Electrochemical cell",
+            ans: "ans1"
+        },
+    ];
+
+
+    const question = document.querySelector('.question');
+    const option1 = document.querySelector('#option1');
+    const option2 = document.querySelector('#option2');
+    const option3 = document.querySelector('#option3');
+    const option4 = document.querySelector('#option4');
+    const submit = document.querySelector('#submit');
+    const answers = document.querySelectorAll('.answer');
+    const showScore = document.querySelector('#showScore');
+
+    let questionCount = 0;
+    let score = 0;
+
+    const loadQuestion = () => {
+        const questionList = quizdata[questionCount];
+        question.innerText = questionList.question;
+        option1.innerText = questionList.a;
+        option2.innerText = questionList.b;
+        option3.innerText = questionList.c;
+        option4.innerText = questionList.d;
+        showScore.innerHTML = `
+        <h3>Question ${questionCount + 1}/${quizdata.length}</h3>
+    `
+    }
+
+    loadQuestion();
+    function getCheckAnswer() {
+        let answer;
+        answers.forEach((currentAnswer) => {
+            if (currentAnswer.checked) {
+                answer = currentAnswer.id;
+            }
+
+        });
+        return answer;
+    }
+
+    const deSelectOptions = () => {
+        answers.forEach((currentAnswer) => {
+            currentAnswer.checked = false;
+        })
+    }
+
+    submit.addEventListener('click', () => {
+        const checkAnswer = getCheckAnswer();
+
+        if (checkAnswer === quizdata[questionCount].ans) {
+            score++;
+            console.log(score);
+        };
+
+        questionCount += 1;
+        if (questionCount < quizdata.length) {
+            deSelectOptions();
+            loadQuestion();
+        }
+        else {
+            showScore.innerHTML = `
+           <h3> Your Score:  ${score}/${quizdata.length} </h3>
+           <h3> Correct: ${score}&nbsp&nbsp&nbsp&nbspIncorrect: ${quizdata.length - score} </h3>
+           <div id="button2"><button class="btn" onclick="location.reload()">Restart</button></div>           
+        `;
+
+            // showScore.classList.remove('scoreArea');
+        }
+    });
+
+
+
+
+
+</script>

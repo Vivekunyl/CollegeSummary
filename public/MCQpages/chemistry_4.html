@@ -1,4 +1,7 @@
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
     * {
         top: 0px;
         margin: 0px;
@@ -11,32 +14,46 @@
     }
 
     .main {
-        height: 80vh;
-        width: 60vw;
-        margin: auto;
+        height: 85vh;
+        width: 90vw;
+        padding: 0.5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
+    .main ul {
+        display: contents;
+    }
+
     .main h2 {
+        font-family: 'Ubuntu', sans-serif;
         margin-top: 0.5rem;
     }
 
     .main ul li {
+        font-family: 'Roboto Condensed', sans-serif;
         list-style: none;
         margin: 0.5rem;
     }
 
+    #button {
+        display: flex;
+        justify-content: center;
+    }
 
+    #button2 {
+        display: flex;
+        justify-content: center;
+    }
 
     #submit {
         width: fit-content;
-        margin: 1rem 10rem;
+        /* margin: 1rem 10rem; */
         background-color: #034079;
         color: white;
         border-radius: 4px;
-        padding: 0.5rem;
+        padding: 0.4rem;
     }
 
     #submit:hover {
@@ -59,33 +76,11 @@
         background-color: #034079;
         color: white;
         border-radius: 4px;
-        padding: 0.5rem;
-        margin-left: 15rem;
+        padding: 0.4rem;
     }
 
     .btn:hover {
         cursor: pointer;
-    }
-
-
-
-    /* media query */
-
-
-
-    @media only screen and (max-width:600px) and (min-width:400px){
-        .main{
-            height:90vh;
-            width:90vw;
-        }
-
-        .main h2 {
-            margin-top: 1.5rem;
-            font-size: 20px;
-        }
-    }
-    @media only screen and (max-width:400px) and (min-width:350px){
-
     }
 </style>
 
@@ -93,7 +88,7 @@
 
 <section id="test">
     <div class="main">
-        <h2 class="question">Q1. will be here what is the full form of CSS?</h2>
+        <h2 class="question">Q1. will be here what is the full form </h2>
         <ul>
             <li>
                 <input type="radio" name="answer" id="ans1" class="answer">
@@ -112,7 +107,9 @@
                 <label for="ans4" id="option4">Answer</label>
             </li>
         </ul>
-        <button id="submit">Submit</button>
+        <div id="button">
+            <button id="submit">Submit</button>
+        </div>
         <div id="showScore" class="scoreArea">
 
         </div>
@@ -124,41 +121,93 @@
 
     const quizdata = [
         {
-            question: "Q1. What is the full form of HTML ?",
-            a: "Hyper Text Markup Language",
-            b: "Hello to My Lord",
-            c: "Hyper Text Make up Language",
-            d: "Hyper Thread Making Language",
-            ans: "ans1"
-        },
-
-        {
-            question: "Q2. What is the full form of CSS ?",
-            a: "Chrome Style Sheet",
-            b: "Cascading Style Sheet",
-            c: "Cross Over Stylesheet",
-            d: "Clear Style Sheet",
+            question: "Q1.  Hydrogen has a positive charge?",
+            a: "Electron",
+            b: "Proton",
+            c: "Both A & B",
+            d: "None Of these",
             ans: "ans2"
         },
 
         {
-            question: "Q3. Who is the founder of JAVA ?",
-            a: "Dennis Ritchi",
-            b: "Bazarne Stroutope",
-            c: "Charles Babage",
-            d: "James Gosling",
+            question: "Q2.  In which branch of chemistry we study hydrocarbon and their derivatives?",
+            a: "Inorganic chemistry",
+            b: "Organic chemistry",
+            c: "Both A & B",
+            d: "None of the above",
+        },
+
+        {
+            question: "Q3. Vapour pressure of a liquid solvent ………………..when a non volatile solute is dissolve in it.",
+            a: "Increase",
+            b: "Decrease",
+            c: "no change",
+            d: "Expand",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q4. ………………. is used in Rast method because it has a high value of Kf.",
+            a: "Camphor",
+            b: "Bi phenyl",
+            c: "Naphthalene",
+            d: "Sodium chloride",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q5. Collision theory is application for__________.",
+            a: "Unimolecular reaction",
+            b: "Bimolecular reaction",
+            c: "Rearrangement reaction",
+            d: "Polyatomic reaction",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q6. Collision theory is application for__________.",
+            a: "Unimolecular reaction",
+            b: "Bimolecular reaction",
+            c: "Rearrangement reaction",
+            d: "Polyatomic reaction",
             ans: "ans4"
         },
+
         {
-            question: "Q4. How many Keywords are there in C langugae ?",
-            a: "36",
-            b: "21",
-            c: "32",
-            d: "None of the Above",
-            ans: "ans3"
-        }
+            question: "Q7. Based on dipole moment, geometries of BF3 and NH3 are respectively.",
+            a: "pyramidal and planar",
+            b: "planar and pyramidal",
+            c: "pyramidal and cubic",
+            d: "cubic and planar",
+            ans: "ans1"
+        },
 
+        {
+            question: "Q8. Helmholtz model represents ________ model",
+            a: "diffused layer",
+            b: "fixed layer",
+            c: "half diffused and half fixed layer",
+            d: "none of the above",
+            ans: "ans2"
+        },
 
+        {
+            question: "Q9. A semipermeable membrane is permeable to …………….. molecules only.",
+            a: "Solvent",
+            b: "Solute",
+            c: "Solution",
+            d: "Solid particles",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q10. Langmuir isotherm holds good at low pressure but fails at",
+            a: "low temperature",
+            b: "high pressure",
+            c: "intermediate pressure",
+            d: "none of these",
+            ans: "ans2"
+        },
     ];
 
 
@@ -221,7 +270,7 @@
             showScore.innerHTML = `
            <h3> Your Score:  ${score}/${quizdata.length} </h3>
            <h3> Correct: ${score}&nbsp&nbsp&nbsp&nbspIncorrect: ${quizdata.length - score} </h3>
-           <button class="btn" onclick="location.reload()">Restart</button>
+           <div id="button2"><button class="btn" onclick="location.reload()">Restart</button></div>           
         `;
 
             // showScore.classList.remove('scoreArea');

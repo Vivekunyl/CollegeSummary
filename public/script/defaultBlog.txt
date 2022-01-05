@@ -1,0 +1,7 @@
+<h2> Know About our Blog Community</h2>
+<hr>
+<p>Read about the latest news of your college by the daily blogs posted in our website and share it with your friends .</p>
+<p><span id="bold">Collegesummary</span> provides you a diversified range of content on daily news about colleges and latest tech related news.</p>
+<p>We are ought to follow all social rules to publish any content on the web and the infomation for any resourse will be geniune.You just have to find the right blog which we have made easier by filtering the conents on various aspects such as    (Techonology related, Examinatin dates, news relates to admissions on different Universities/Colleges.</p>
+<p></p>
+<p>You can also join our Blog community to write creative and quality content by just <a href="/contact">contacting</a> us and get an oppurtunity to write blogs of your own;</p>

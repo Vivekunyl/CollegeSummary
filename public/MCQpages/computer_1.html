@@ -1,0 +1,330 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+    * {
+        top: 0px;
+        margin: 0px;
+    }
+
+    #test {
+        background-color: rgb(226 241 255);
+        height: 100vh;
+        border-radius: 8px;
+    }
+
+    .main {
+        height: 85vh;
+        width: 90vw;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main ul {
+        display: contents;
+    }
+
+    .main h2 {
+        font-family: 'Ubuntu', sans-serif;
+        margin-top: 0.5rem;
+    }
+
+    .main ul li {
+        font-family: 'Roboto Condensed', sans-serif;
+        list-style: none;
+        margin: 0.5rem;
+    }
+
+    #button {
+        display: flex;
+        justify-content: center;
+    }
+
+    #button2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        width: fit-content;
+        /* margin: 1rem 10rem; */
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+    }
+
+    #showScore {
+        height: 25vh;
+        background-color: #eefaff;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+
+    #showScore h3 {
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+
+    .btn {
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+</style>
+
+
+
+<section id="test">
+    <div class="main">
+        <h2 class="question">Q1. will be here what is the full form of CSS?</h2>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="ans1" class="answer">
+                <label for="ans1" id="option1">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans2" class="answer">
+                <label for="ans2" id="option2">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans3" class="answer">
+                <label for="ans3" id="option3">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans4" class="answer">
+                <label for="ans4" id="option4">Answer</label>
+            </li>
+        </ul>
+        <div id="button">
+            <button id="submit">Submit</button>
+        </div>
+        <div id="showScore" class="scoreArea">
+
+        </div>
+    </div>
+</section>
+
+<script>
+    //javascript for mcq ection    
+
+    const quizdata = [
+    {
+    question: "Q1.  What is the 16-bit compiler allowable range for integer constants?",
+    a: "-3.4e38 to 3.4e38",
+    b: "-32767 to 32768",
+    c: "-32668 to 32667",
+    d: "-32768 to 32767",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q2.  What is required in each C program?",
+    a: "The program must have at least one function.",
+    b: "The program does not require any function.",
+    c: "Input data",
+    d: "Output data",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q3.  Why is a macro used in place of a function?",
+    a: "It reduces execution time.",
+    b: "It reduces code size.",
+    c: "It increases execution time.",
+    d: "It increases code size.",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q4. In the C language, the constant is defined _______.",
+    a: "Before main",
+    b: "After main",
+    c: "Anywhere, but starting on a new line.",
+    d: "None of the these.",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q5.  A pointer is a memory address. Suppose the pointer variable has p address 1000, and that p is declared to have type int*, and an int is 4 bytes long. What address is represented by expression p + 2?",
+    a: "1002",
+    b: "1004",
+    c: "1006",
+    d: "1008",
+    ans: "ans4"
+    },
+
+    {
+    question:"Q6. Which one of the following is a loop construct that will always be executed once?",
+    a: "for",
+    b: "while",
+    c: "switch",
+    d: "do while",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q7. Directives are translated by the",
+    a: "Pre-processor",
+    b: "Compiler",
+    c: "Linker",
+    d: "Editor",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q8. Which of the following will copy the null-terminated string that is in array src into array dest?",
+    a: "dest = src;",
+    b: "dest == src;",
+    c: "strcpy(dest, src);",
+    d: "strcpy(src, dest);",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q9. Each instance of a class has a different set of",
+    a: "Class interfaces",
+    b: "Methods",
+    c: "Return types",
+    d: "Attribute values",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q10.  How many instances of a class can be declared?",
+    a: "1",
+    b: "10",
+    c: "As per required",
+    d: "None of the these",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q11.  What is the maximum number of characters that can be held in the string variable char address line [40]?",
+    a: "38",
+    b: "39",
+    c: "40",
+    d: "41",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q12.  Which of the following statement is not true?",
+    a: "A pointer to an int and a pointer to a double are of the same size.",
+    b: "A pointer must point to a data item on the heap (free store).",
+    c: "A pointer can be reassigned to point to another data item.",
+    d: "A pointer can point to an array.",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q13.  Which of the following SLT template class is a container adaptor class?",
+    a: "Stack",
+    b: "List",
+    c: "Deque",
+    d: "Vector",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q14. What kinds of iterators can be used with vectors?",
+    a: "Forward iterator",
+    b: "Bi-directional iterator",
+    c: "Random access iterator",
+    d: "All of the above",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q15. Let p1 be an integer pointer with a current value of 2000. What is the content of p1 after the expression p1++ has been evaluated?",
+    a: "2001",
+    b: "2002",
+    c: "2004",
+    d: "2008",
+    ans: "ans3"
+    },
+];
+
+
+    const question = document.querySelector('.question');
+    const option1 = document.querySelector('#option1');
+    const option2 = document.querySelector('#option2');
+    const option3 = document.querySelector('#option3');
+    const option4 = document.querySelector('#option4');
+    const submit = document.querySelector('#submit');
+    const answers = document.querySelectorAll('.answer');
+    const showScore = document.querySelector('#showScore');
+
+    let questionCount = 0;
+    let score = 0;
+
+    const loadQuestion = () => {
+        const questionList = quizdata[questionCount];
+        question.innerText = questionList.question;
+        option1.innerText = questionList.a;
+        option2.innerText = questionList.b;
+        option3.innerText = questionList.c;
+        option4.innerText = questionList.d;
+        showScore.innerHTML = `
+        <h3>Question ${questionCount + 1}/${quizdata.length}</h3>
+    `
+    }
+
+    loadQuestion();
+    function getCheckAnswer() {
+        let answer;
+        answers.forEach((currentAnswer) => {
+            if (currentAnswer.checked) {
+                answer = currentAnswer.id;
+            }
+
+        });
+        return answer;
+    }
+
+    const deSelectOptions = () => {
+        answers.forEach((currentAnswer) => {
+            currentAnswer.checked = false;
+        })
+    }
+
+    submit.addEventListener('click', () => {
+        const checkAnswer = getCheckAnswer();
+
+        if (checkAnswer === quizdata[questionCount].ans) {
+            score++;
+            console.log(score);
+        };
+
+        questionCount += 1;
+        if (questionCount < quizdata.length) {
+            deSelectOptions();
+            loadQuestion();
+        }
+        else {
+            showScore.innerHTML = `
+           <h3> Your Score:  ${score}/${quizdata.length} </h3>
+           <h3> Correct: ${score}&nbsp&nbsp&nbsp&nbspIncorrect: ${quizdata.length - score} </h3>
+           <div id="button2"><button class="btn" onclick="location.reload()">Restart</button></div>           
+        `;
+
+            // showScore.classList.remove('scoreArea');
+        }
+    });
+
+
+
+
+
+</script>

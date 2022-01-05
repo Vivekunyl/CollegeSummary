@@ -2,7 +2,7 @@ stickyElem = document.getElementById("navbar");
 stickyElem_1 = document.getElementById("accessBar");
 ulcolor = document.getElementById("ulcolor");
 acolor = document.querySelectorAll(".acolor");
-contentShortcut = document.getElementById("contentShortcuts");
+blogShortcuts = document.querySelector(".blogShortcuts");
 
     currStickyPos = stickyElem.getBoundingClientRect().top + window.pageYOffset;
     currStickyPos1 = stickyElem.getBoundingClientRect().top + window.pageYOffset
@@ -25,14 +25,13 @@ contentShortcut = document.getElementById("contentShortcuts");
                 stickyElem_1.style.top = "23vh";
             }
             else{
-                // stickyElem.style.position = "fixed";
                 stickyElem.style.display = "none";
                 stickyElem.style.top = "0rem";
                 stickyElem_1.style.position = "fixed";
                 stickyElem_1.style.top = "0rem";
                 stickyElem_1.style.height = "22vh";
                 ulcolor.style.backgroundColor ="#404952";
-                contentShortcut.style.marginTop = "14rem";
+                blogShortcuts.style.marginTop = "15rem";
                 acolor.forEach(element => {
                     element.style.color = "#ffffff";
                 });
@@ -46,7 +45,7 @@ contentShortcut = document.getElementById("contentShortcuts");
                 stickyElem_1.style.top = "initial";
                 stickyElem_1.style.height = "27vh";
                 ulcolor.style.backgroundColor ="#ffffff";
-                contentShortcut.style.marginTop = "0rem";
+                blogShortcuts.style.marginTop = "0rem";
                 acolor.forEach(element => {
                     element.style.color = "#404952";
                 });
@@ -62,10 +61,44 @@ contentShortcut = document.getElementById("contentShortcuts");
         }
     }
 
-getText("script/blog.txt");
+// Function to load data to default blog division
 
-async function getText(file) {
+loadData("script/defaultBlog.txt");
+
+async function loadData(file) {
   let myObject = await fetch(file);
   let myText = await myObject.text();
-  document.getElementById("blogcontent").innerHTML = myText;
+  document.getElementById("DefaultBlog").innerHTML = myText;
+}
+
+//Default blog division
+
+loadDefaultData("script/default.txt");
+
+async function loadDefaultData(file) {
+  let myObject = await fetch(file);
+  let myText = await myObject.text();
+  document.getElementById("getBlogData").innerHTML = myText;
+}
+
+//Function to load Blog content
+
+async function loadBlogData(file) {
+  let myObject = await fetch(file);
+  let myText = await myObject.text();
+  document.getElementById("getBlogData").innerHTML = myText;
+}
+
+//Best College
+const  best_College = () =>{
+    document.getElementById("getBlogData").innerHTML="";
+    document.getElementById("DefaultBlog").style.display="none";
+    loadBlogData("script/bestCollege.txt");
+}
+
+//About gbpiet
+const gbpiet = () =>{
+    document.getElementById("getBlogData").innerHTML="";
+    document.getElementById("DefaultBlog").style.display="none";
+    loadBlogData("script/aboutgbpiet.txt");
 }

@@ -1,0 +1,320 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap'); 
+    * {
+        top: 0px;
+        margin: 0px;
+    }
+
+    #test {
+        background-color: rgb(226 241 255);
+        height: 100vh;
+        border-radius: 8px;
+    }
+
+    .main {
+        height: 85vh;
+        width: 90vw;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main ul {
+        display: contents;
+    }
+
+    .main h2 {
+            font-family: 'Ubuntu', sans-serif;
+            margin-top: 0.5rem;
+    }
+
+    .main ul li {
+        font-family: 'Roboto Condensed', sans-serif;
+        list-style: none;
+        margin: 0.5rem;
+    }
+
+    #button {
+        display: flex;
+        justify-content: center;
+    }
+
+    #button2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        width: fit-content;
+        /* margin: 1rem 10rem; */
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+    }
+
+    #showScore {
+        height: 25vh;
+        background-color: #eefaff;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+
+    #showScore h3 {
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+
+    .btn {
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+</style>
+
+
+
+<section id="test">
+    <div class="main">
+        <h2 class="question">Q1. will be here what is the full form of CSS?</h2>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="ans1" class="answer">
+                <label for="ans1" id="option1">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans2" class="answer">
+                <label for="ans2" id="option2">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans3" class="answer">
+                <label for="ans3" id="option3">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans4" class="answer">
+                <label for="ans4" id="option4">Answer</label>
+            </li>
+        </ul>
+        <div id="button">
+            <button id="submit">Submit</button>
+        </div>
+        <div id="showScore" class="scoreArea">
+
+        </div>
+    </div>
+</section>
+
+<script>
+    //javascript for mcq ection    
+
+    const quizdata = [
+    {
+    question: "Q1. In Newton Raphson method if the curve f(x) is constant then __________",
+    a: "f(x)=0",
+    b: "f’(x)=c",
+    c: "f’’(x)=0",
+    d: "f’(x)=0",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q2. If x is a set and the set contains an integer which is neither positive nor negative then the set x is ____________.",
+    a: "Set is Empty",
+    b: "Set is Non-empty",
+    c: "Set is Finite.",
+    d: "Set is both Non- empty and Finite.",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q3.  What is the Cartesian product of set A and set B, if the set A = {1, 2} and set B = {a, b}?",
+    a: "{ (1, a), (1, b), (2, a), (b, b) }",
+    b: "{ (1, 1), (2, 2), (a, a), (b, b) }",
+    c: "{ (1, a), (2, a), (1, b), (2, b) }",
+    d: "{ (1, 1), (a, a), (2, a), (1, b) }",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q4. Which among the following can be taken as the discrete object?",
+    a: "People",
+    b: "Rational numbers",
+    c: "Integers",
+    d: "All of the mentioned",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q5. Which option contains two equal sets?",
+    a: "X = {5, 6} and Y = {6}",
+    b: "X = {5, 6, 8, 9} and Y = {6, 8, 5, 9}",
+    c: "X = {5, 6, 9} and Y = {5, 6}",
+    d: "X = {5, 6} and Y = {5, 6, 3}",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q6. Which of the following is not a type of matrix?",
+    a: "Square Matrix",
+    b: "Scalar Matrix",
+    c: "Trace Matrix",
+    d: "Term Matrix",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q7. Multiplication of a matrix with a scalar constant is called?",
+    a: "Complex multiplication",
+    b: "Linear multiplication",
+    c: "Scalar multiplication",
+    d: "Constant multiplication",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q9. Which of the following is correct method to solve matrix equations?",
+    a: "Row Echelon Form",
+    b: "Inverse of a Matrix",
+    c: "Both A and B",
+    d: "None Of the above",
+    ans: "ans3"
+    },
+
+    {
+    question: "Q10. The concept of Eigen values and vectors is applicable to?",
+    a: "Scalar matrix",
+    b: "Identity matrix",
+    c: "Upper triangular matrix",
+    d: "Square matrix",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q11.  Which of the following is correct application for Eigenvectors?",
+    a: "computer vision",
+    b: "physics",
+    c: "machine learning",
+    d: "All of the above",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q12.  A non empty set A is termed as an algebraic structure ________",
+    a: "with respect to binary operation *",
+    b: "with respect to ternary operation ?",
+    c: "with respect to binary operation +",
+    d: "with respect to unary operation –",
+    ans: "ans1"
+    },
+
+    {
+    question: "Q13. Matrix multiplication is a/an ____ property.",
+    a: "Commutative",
+    b: "Associative",
+    c: "Additive",
+    d: "Disjunctive",
+    ans: "ans2"
+    },
+
+    {
+    question: "Q14. The set of all real numbers under the usual multiplication operation is not a group since",
+    a: "multiplication is not a binary operation",
+    b: "multiplication is not associative",
+    c: "identity element does not exist",
+    d: "zero has no inverse",
+    ans: "ans4"
+    },
+
+    {
+    question: "Q15. If the binary operation * is deined on a set of ordered pairs of real numbers as (a, b) * (c, d) = (ad + bc, bd) and is associative, then (1, 2) * (3, 5) * (3, 4) equals",
+    a: "(74,40)",
+    b: "(32,40)",
+    c: "(23,11)",
+    d: "(7,11)",
+    ans: "ans1"
+    },
+];
+
+
+    const question = document.querySelector('.question');
+    const option1 = document.querySelector('#option1');
+    const option2 = document.querySelector('#option2');
+    const option3 = document.querySelector('#option3');
+    const option4 = document.querySelector('#option4');
+    const submit = document.querySelector('#submit');
+    const answers = document.querySelectorAll('.answer');
+    const showScore = document.querySelector('#showScore');
+
+    let questionCount = 0;
+    let score = 0;
+
+    const loadQuestion = () => {
+        const questionList = quizdata[questionCount];
+        question.innerText = questionList.question;
+        option1.innerText = questionList.a;
+        option2.innerText = questionList.b;
+        option3.innerText = questionList.c;
+        option4.innerText = questionList.d;
+        showScore.innerHTML = `
+        <h3>Question ${questionCount + 1}/${quizdata.length}</h3>
+    `
+    }
+
+    loadQuestion();
+    function getCheckAnswer() {
+        let answer;
+        answers.forEach((currentAnswer) => {
+            if (currentAnswer.checked) {
+                answer = currentAnswer.id;
+            }
+
+        });
+        return answer;
+    }
+
+    const deSelectOptions = () => {
+        answers.forEach((currentAnswer) => {
+            currentAnswer.checked = false;
+        })
+    }
+
+    submit.addEventListener('click', () => {
+        const checkAnswer = getCheckAnswer();
+
+        if (checkAnswer === quizdata[questionCount].ans) {
+            score++;
+            console.log(score);
+        };
+
+        questionCount += 1;
+        if (questionCount < quizdata.length) {
+            deSelectOptions();
+            loadQuestion();
+        }
+        else {
+            showScore.innerHTML = `
+           <h3> Your Score:  ${score}/${quizdata.length} </h3>
+           <h3> Correct: ${score}&nbsp&nbsp&nbsp&nbspIncorrect: ${quizdata.length - score} </h3>
+           <div id="button2"><button class="btn" onclick="location.reload()">Restart</button></div>           
+        `;
+
+            // showScore.classList.remove('scoreArea');
+        }
+    });
+
+
+
+
+
+</script>

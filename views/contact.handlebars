@@ -1,6 +1,18 @@
 {{> navbar}}
-<form action="/contact">
-    <input type="text" placeholder="Enter your name">
-    <input type="number" placeholder="Eter your number">
-
-</form>
+<section class="form_section">
+    <div class="formArea">
+        <h2>Contact Us</h2>
+        <form class="container" method="post" action="/contact">
+            <div class="inputArea">
+                <label for="name" class="formField">Name</label>
+                <input type="text" name="name" placeholder="your Name">
+                <label for="email" class="formField">E-mail</label>
+                <input type="email" name="email" placeholder="your E-mail">
+                <label for="phone" class="formField">Phone Number</label>
+                <input type="number" name="phone" placeholder="your number">
+                <textarea name="message" id="text_area" cols="30" rows="10"></textarea>
+            </div>
+            <button>Submit</button>
+        </form>
+    </div>
+</section>

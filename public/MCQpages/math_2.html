@@ -1,0 +1,329 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap'); 
+    * {
+        top: 0px;
+        margin: 0px;
+    }
+
+    #test {
+        background-color: rgb(226 241 255);
+        height: 100vh;
+        border-radius: 8px;
+    }
+
+    .main {
+        height: 85vh;
+        width: 90vw;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main ul {
+        display: contents;
+    }
+
+    .main h2 {
+            font-family: 'Ubuntu', sans-serif;
+            margin-top: 0.5rem;
+    }
+
+    .main ul li {
+        font-family: 'Roboto Condensed', sans-serif;
+        list-style: none;
+        margin: 0.5rem;
+    }
+
+    #button {
+        display: flex;
+        justify-content: center;
+    }
+
+    #button2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        width: fit-content;
+        /* margin: 1rem 10rem; */
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+    }
+
+    #showScore {
+        height: 25vh;
+        background-color: #eefaff;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+
+    #showScore h3 {
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+
+    .btn {
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+</style>
+
+
+
+<section id="test">
+    <div class="main">
+        <h2 class="question">Q1. will be here what is the full form of CSS?</h2>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="ans1" class="answer">
+                <label for="ans1" id="option1">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans2" class="answer">
+                <label for="ans2" id="option2">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans3" class="answer">
+                <label for="ans3" id="option3">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans4" class="answer">
+                <label for="ans4" id="option4">Answer</label>
+            </li>
+        </ul>
+        <div id="button">
+            <button id="submit">Submit</button>
+        </div>
+        <div id="showScore" class="scoreArea">
+
+        </div>
+    </div>
+</section>
+
+<script>
+    //javascript for mcq ection    
+
+    const quizdata = [
+        {
+            question: "Q1. If A = {(x, y) : x2 + y2 = 32} and B = {(x, y) : x2 + 3y2 = 12} then A ∩ B contains",
+            a: "two points",
+            b: "hree points",
+            c: "one points",
+            d: "four points",
+            ans: "ans4"
+        },
+
+        {
+            question: "Q2. Numerical techniques more commonly involve _______",
+            a: "Elimination method",
+            b: "Reduction method",
+            c: "Iterative method",
+            d: "Direct method",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q3. Which of the following is an iterative method?",
+            a: "Gauss Seidel",
+            b: "Gauss Jordan",
+            c: "Factorization",
+            d: "Gauss Elimination",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q4. Errors may occur in performing numerical computation on the computer due to which of the following reasons?",
+            a: "Operator fatigue",
+            b: "Back substitution",
+            c: "Rounding errors",
+            d: "Power fluctuation",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q5. Which of the following is also known as the Newton Raphson method?",
+            a: "Chord method",
+            b: "Tangent method",
+            c: "Diameter method",
+            d: "Secant method",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q6. If approximate solution of the set of equations, 2x+2y-z = 6, x+y+2z = 8 and -x+3y+2z = 4, is given by x = 2.8 y = 1 and z = 1.8. Then, what is the exact solution?",
+            a: "x = 1, y = 3, z = 2",
+            b: "x = 2, y = 3, z = 1",
+            c: "x = 3, y = 1, z = 2",
+            d: "x = 1, y = 2, z = 2",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q7. Which of the methods is a direct method for solving simultaneous algebraic equations?",
+            a: "Relaxation method",
+            b: "Gauss seidel method",
+            c: "Jacobi’s method",
+            d: "Cramer’s rule",
+            ans: "ans4"
+        },
+
+        {
+            question: "Q8. Which of the following is the advantage of using the Gauss Jordan method?",
+            a: "Additional Calculations",
+            b: "No labour of back substitution",
+            c: "More operations involved",
+            d: "Elimination is easier",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q9.  Matrix which does not have an inverse by solving it, is classified as which of the following?",
+            a: "singular matrix",
+            b: "non-singular matrix",
+            c: "linear matrix",
+            d: "unidentified matrix",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q10.  Which of the following transformations are allowed in the Gauss Jordan method?",
+            a: "Swapping a column",
+            b: "Swapping two rows",
+            c: "Swapping two columns",
+            d: "Swapping a row",
+            ans: "ans2"
+        },
+
+        {
+            qestion: "Q11.  The Gauss Jordan method reduces a original matrix into a _____________",
+            a: "Skew Hermitian matrix",
+            b: "Non-symmetric matrix",
+            c: "Identity matrix",
+            d: "Null matrix",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q12.  What is the other name for factorization method?",
+            a: "Muller’s Method",
+            b: "Decomposition Method",
+            c: "Lin Bairstow Method",
+            d: "Doolittle’s Method",
+            ans: "ans4"
+        },
+
+        {
+            question: "Q13. Gauss Seidal method is also termed as a method of _______",
+            a: "Iterations",
+            b: "False positions",
+            c: "Successive displacement",
+            d: "Eliminations",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q14. What is the condition applied in the factorization method?",
+            a: "There must exist a diagonal matrix form of the given matrix",
+            b: "Matrix should not be singular",
+            c: "All principal minors of the matrix should be non-singular",
+            d: "Back substitution should be done",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q15. Secant Method is also called as?",
+            a: "5-point method",
+            b: "2-point method",
+            c: "3-point method",
+            d: "4-point method",
+            ans: "ans2"
+        },
+    ];
+
+
+    const question = document.querySelector('.question');
+    const option1 = document.querySelector('#option1');
+    const option2 = document.querySelector('#option2');
+    const option3 = document.querySelector('#option3');
+    const option4 = document.querySelector('#option4');
+    const submit = document.querySelector('#submit');
+    const answers = document.querySelectorAll('.answer');
+    const showScore = document.querySelector('#showScore');
+
+    let questionCount = 0;
+    let score = 0;
+
+    const loadQuestion = () => {
+        const questionList = quizdata[questionCount];
+        question.innerText = questionList.question;
+        option1.innerText = questionList.a;
+        option2.innerText = questionList.b;
+        option3.innerText = questionList.c;
+        option4.innerText = questionList.d;
+        showScore.innerHTML = `
+        <h3>Question ${questionCount + 1}/${quizdata.length}</h3>
+    `
+    }
+
+    loadQuestion();
+    function getCheckAnswer() {
+        let answer;
+        answers.forEach((currentAnswer) => {
+            if (currentAnswer.checked) {
+                answer = currentAnswer.id;
+            }
+
+        });
+        return answer;
+    }
+
+    const deSelectOptions = () => {
+        answers.forEach((currentAnswer) => {
+            currentAnswer.checked = false;
+        })
+    }
+
+    submit.addEventListener('click', () => {
+        const checkAnswer = getCheckAnswer();
+
+        if (checkAnswer === quizdata[questionCount].ans) {
+            score++;
+            console.log(score);
+        };
+
+        questionCount += 1;
+        if (questionCount < quizdata.length) {
+            deSelectOptions();
+            loadQuestion();
+        }
+        else {
+            showScore.innerHTML = `
+           <h3> Your Score:  ${score}/${quizdata.length} </h3>
+           <h3> Correct: ${score}&nbsp&nbsp&nbsp&nbspIncorrect: ${quizdata.length - score} </h3>
+           <div id="button2"><button class="btn" onclick="location.reload()">Restart</button></div>           
+        `;
+
+            // showScore.classList.remove('scoreArea');
+        }
+    });
+
+
+
+
+
+</script>

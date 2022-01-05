@@ -1,0 +1,330 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap'); 
+    * {
+        top: 0px;
+        margin: 0px;
+    }
+
+    #test {
+        background-color: rgb(226 241 255);
+        height: 100vh;
+        border-radius: 8px;
+    }
+
+    .main {
+        height: 85vh;
+        width: 90vw;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main ul {
+        display: contents;
+    }
+
+    .main h2 {
+            font-family: 'Ubuntu', sans-serif;
+            margin-top: 0.5rem;
+    }
+
+    .main ul li {
+        font-family: 'Roboto Condensed', sans-serif;
+        list-style: none;
+        margin: 0.5rem;
+    }
+
+    #button {
+        display: flex;
+        justify-content: center;
+    }
+
+    #button2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        width: fit-content;
+        /* margin: 1rem 10rem; */
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+    }
+
+    #showScore {
+        height: 25vh;
+        background-color: #eefaff;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+
+    #showScore h3 {
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+
+    .btn {
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+</style>
+
+
+
+<section id="test">
+    <div class="main">
+        <h2 class="question">Q1. will be here what is the full form of CSS?</h2>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="ans1" class="answer">
+                <label for="ans1" id="option1">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans2" class="answer">
+                <label for="ans2" id="option2">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans3" class="answer">
+                <label for="ans3" id="option3">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans4" class="answer">
+                <label for="ans4" id="option4">Answer</label>
+            </li>
+        </ul>
+        <div id="button">
+            <button id="submit">Submit</button>
+        </div>
+        <div id="showScore" class="scoreArea">
+
+        </div>
+    </div>
+</section>
+
+<script>
+    //javascript for mcq ection    
+
+    const quizdata = [
+        {
+            question: "Q1. Which of the following is not a continuous probability distribution?",
+            a: "Poisson distribution",
+            b: "Lognormal distribution",
+            c: "Normal distribution",
+            d: "Gamma distribution",
+            ans: "ans1"
+        },
+
+
+        {
+            question: "Q2. In a binomial probability distribution it is impossible to find?",
+            a: "P(0≤ X ≤n)",
+            b: "P(X>0)",
+            c: "P(X=0)",
+            d: "P(X< 0)",
+            ans: "ans4"
+        },
+
+        {
+            question: "Q3. Smaller P value indicates more evidence in support of:",
+            a: "further testing",
+            b: "the quality of researcher",
+            c: "the alternative hypothesis",
+            d: "the null hypothesis",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q4. __________________ is referred to as the rectangular distribution.",
+            a: "normal distribution",
+            b: "binomial distribution",
+            c: "exponential distribution",
+            d: "uniform distribution",
+            ans: "ans4"
+        },
+
+        {
+            question: "Q5. A failing student is passed by an examiner. It is an example of",
+            a: "Difficult to tell",
+            b: "Unbiased decision",
+            c: "Type-II error",
+            d: "Type-I error",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q6.When the problem involves the allocation of n different facilities to n different tasks, it is often termed as ___",
+            a: "Assignment problem",
+            b: "Integer programming problem",
+            c: "Principle of Game",
+            d: "Transportation problem",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q7. A survey determines that in a locality, 33% go to work by Bike, 42% go by Car, and 12% use both. The probability that a random person selected uses neither of them is",
+            a: "0.75",
+            b: "0.61",
+            c: "0.37",
+            d: "0.29",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q8. Any statement whose validity is tested on the basis of a sample is called:",
+            a: "Simple hypothesis",
+            b: "Statistical hypothesis",
+            c: "Alternative hypothesis",
+            d: "Null hypothesis",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q9. Which of the following is not a sequencing problem?",
+            a: "Many machines, one job",
+            b: "Three machines, many jobs",
+            c: "Two machines, many jobs",
+            d: "One machine, many jobs",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q10.Formula for calculating mean for hypergeometric probability distribution is",
+            a: "n (M ⁄ N)",
+            b: "n (n ⁄ m)",
+            c: "m (n ⁄ N)",
+            d: "N (M ⁄ n)",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q11. The process of making estimates about the population parameter from a sample is called:",
+            a: "Statistical decision",
+            b: "Statistical hypothesis",
+            c: "Statistical inference",
+            d: "Statistical independence",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q12. Operation research analysts do not",
+            a: "Recommend decision",
+            b: "Collect the relevant data",
+            c: "Build more than one model",
+            d: "Predict future operation",
+            ans: "ans4"
+        },
+
+        {
+            question: "Q13. The distribution for which moment generating function (m.g.f.) does not exist is:",
+            a: "Rectangular distribution",
+            b: "Exponential distribution",
+            c: "Gamma distribution",
+            d: "Cauchy distribution",
+            ans: "ans4"
+        },
+
+        {
+            question: "Q14. How is Spearman’s Rho(ρ) calculated?",
+            a: "Spearman’s Rho uses the original scores, no transformations are needed",
+            b: "Spearman’s Rho is calculated by transforming original data into categories",
+            c: "Spearman’s Rho is calculated by transforming original scores into deviations",
+            d: "Spearman’s Rho is calculated by transforming original scores into ranks",
+            ans: "ans4"
+        },
+
+        {
+            question: "Q15. From the following methods, ___ is a method to obtain initial solution to transportation problem.",
+            a: "Newton Raphson",
+            b: "Simplex",
+            c: "Hungarian",
+            d: "North-West",
+            ans: "ans4"
+        },
+    ];
+
+
+    const question = document.querySelector('.question');
+    const option1 = document.querySelector('#option1');
+    const option2 = document.querySelector('#option2');
+    const option3 = document.querySelector('#option3');
+    const option4 = document.querySelector('#option4');
+    const submit = document.querySelector('#submit');
+    const answers = document.querySelectorAll('.answer');
+    const showScore = document.querySelector('#showScore');
+
+    let questionCount = 0;
+    let score = 0;
+
+    const loadQuestion = () => {
+        const questionList = quizdata[questionCount];
+        question.innerText = questionList.question;
+        option1.innerText = questionList.a;
+        option2.innerText = questionList.b;
+        option3.innerText = questionList.c;
+        option4.innerText = questionList.d;
+        showScore.innerHTML = `
+        <h3>Question ${questionCount + 1}/${quizdata.length}</h3>
+    `
+    }
+
+    loadQuestion();
+    function getCheckAnswer() {
+        let answer;
+        answers.forEach((currentAnswer) => {
+            if (currentAnswer.checked) {
+                answer = currentAnswer.id;
+            }
+
+        });
+        return answer;
+    }
+
+    const deSelectOptions = () => {
+        answers.forEach((currentAnswer) => {
+            currentAnswer.checked = false;
+        })
+    }
+
+    submit.addEventListener('click', () => {
+        const checkAnswer = getCheckAnswer();
+
+        if (checkAnswer === quizdata[questionCount].ans) {
+            score++;
+            console.log(score);
+        };
+
+        questionCount += 1;
+        if (questionCount < quizdata.length) {
+            deSelectOptions();
+            loadQuestion();
+        }
+        else {
+            showScore.innerHTML = `
+           <h3> Your Score:  ${score}/${quizdata.length} </h3>
+           <h3> Correct: ${score}&nbsp&nbsp&nbsp&nbspIncorrect: ${quizdata.length - score} </h3>
+           <div id="button2"><button class="btn" onclick="location.reload()">Restart</button></div>           
+        `;
+
+            // showScore.classList.remove('scoreArea');
+        }
+    });
+
+
+
+
+
+</script>

@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');  /*For blog Section*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 *{
     margin:0px;
     padding:0px;
@@ -31,7 +35,7 @@
     list-style:none;
 }
 #navbar ul li a{
-    font-family: 'Merriweather', serif;
+    font-family: 'Ubuntu', sans-serif;
     display: block;
     text-decoration:none;
     color:#ffffff;
@@ -85,6 +89,7 @@
     margin-top: 0.5rem;
 }
 #contentArea ul li a{
+    font-family: 'Ubuntu', sans-serif;
     text-decoration: none;
     padding:0.5rem 1.5rem;
     padding-bottom:1rem;
@@ -121,6 +126,7 @@
 }
 
 #mcqShortcut h3{
+    font-family: 'Roboto', sans-serif;
     margin-top:0.5rem;
 }
 
@@ -132,6 +138,7 @@
 }
 
 #mcqShortcut ul li a{
+    font-family: 'Ubuntu', sans-serif;
     text-decoration: none;
     color:#404952;
 }
@@ -149,10 +156,13 @@
 }
 
 #textArea h2{
+    font-family: 'Roboto', sans-serif;
+    padding-top:0.5rem;
     font-size:2rem;
 }
 
 #textArea p{
+    font-family: 'Ubuntu', sans-serif;
     margin-top:1rem;
 }
 #questionPaperShortcut{
@@ -174,6 +184,7 @@
 }
 
 #questionPaperShortcut .tiles a{
+    font-family: 'Ubuntu', sans-serif;
     text-decoration: none;
     color:#404952;
 }
@@ -191,10 +202,10 @@
 }
 
 #blogcontent{
+    font-family: 'Roboto Condensed', sans-serif;
     height:30vh;
     width:80vw;
     background-color:white;
-    font-style:italic;
     font-size:18px;
     margin:0rem auto;
     padding:1rem;
@@ -206,6 +217,8 @@
     font-weight:bold;
 }
 #topHeading{
+    font-family: 'Roboto', sans-serif;
+    padding:0.5rem;
     width:25vw;
     background-color:white;
     text-align:center;
@@ -232,6 +245,7 @@
 }
 
 #blogSecionButton a{
+    font-family: 'Ubuntu', sans-serif;
     text-decoration: none;
     color:black;  
 }
@@ -240,6 +254,14 @@
     font-weight:800;
 }
 
+/* Css footer Section */
+#footer_section{
+    font-family: 'Ubuntu', sans-serif;
+    width:100vw;
+    background-color:black;
+    color:white;
+    text-align:center;
+}
 
 
 
@@ -262,6 +284,7 @@
 }
 
 @media only screen and (max-width:800px) and (min-width:600px){
+    
     #navbar{
         flex-direction:column;
         height:23vh;
@@ -338,7 +361,7 @@
         padding-bottom: 0.2rem;
     }
     #shortcutArea{
-        height: 150vh;
+        height: 180vh;
     }
     #contentShortcuts{
         flex-direction: column;
@@ -422,7 +445,7 @@
         border-radius: 0px;
     }
     #shortcutArea{
-        height: 150vh;
+        height: 190vh;
     }
     #contentShortcuts{
         flex-direction: column;
@@ -454,6 +477,7 @@
     }
     #topHeading h2{
         font-size:17px;
+        padding:0.3rem;
     }
     #blogcontent{
         height: 60vh;

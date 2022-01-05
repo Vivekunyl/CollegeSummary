@@ -1,0 +1,330 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+    * {
+        top: 0px;
+        margin: 0px;
+    }
+
+    #test {
+        background-color: rgb(226 241 255);
+        height: 100vh;
+        border-radius: 8px;
+    }
+
+    .main {
+        height: 85vh;
+        width: 90vw;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main ul {
+        display: contents;
+    }
+
+    .main h2 {
+        font-family: 'Ubuntu', sans-serif;
+        margin-top: 0.5rem;
+    }
+
+    .main ul li {
+        font-family: 'Roboto Condensed', sans-serif;
+        list-style: none;
+        margin: 0.5rem;
+    }
+
+    #button {
+        display: flex;
+        justify-content: center;
+    }
+
+    #button2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        width: fit-content;
+        /* margin: 1rem 10rem; */
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+    }
+
+    #showScore {
+        height: 25vh;
+        background-color: #eefaff;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+
+    #showScore h3 {
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+
+    .btn {
+        background-color: #034079;
+        color: white;
+        border-radius: 4px;
+        padding: 0.4rem;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+</style>
+
+
+
+<section id="test">
+    <div class="main">
+        <h2 class="question">Q1. will be here what is the full form of CSS?</h2>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="ans1" class="answer">
+                <label for="ans1" id="option1">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans2" class="answer">
+                <label for="ans2" id="option2">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans3" class="answer">
+                <label for="ans3" id="option3">Answer</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="ans4" class="answer">
+                <label for="ans4" id="option4">Answer</label>
+            </li>
+        </ul>
+        <div id="button">
+            <button id="submit">Submit</button>
+        </div>
+        <div id="showScore" class="scoreArea">
+
+        </div>
+    </div>
+</section>
+
+<script>
+    //javascript for mcq ection    
+
+    const quizdata = [
+        {
+            question: "Q1. The outer membrane that covers the brain is",
+            a: "Myelin sheath",
+            b: "Dura mater",
+            c: "Arachnoid membrane",
+            d: "Pia mater",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q2. The hormone that helps in Parthenocarpy",
+            a: "Abscisic acid",
+            b: "Gibberellin",
+            c: "Ethylene",
+            d: "Cytokinin",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q3. What do eukaryotic cells have that prokaryotic cells do not?",
+            a: "Nucleus",
+            b: "Cytoplasm",
+            c: "Ribosomes",
+            d: "DNA",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q4. Vivipary is defined as germination",
+            a: "during storage",
+            b: "within the fruit",
+            c: "with cotyledons coming out of soil",
+            d: "with cotyledons remaining inside the soil",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q5. What Is The Study Of Cells Called",
+            a: "Cellogysm",
+            b: "Cytology",
+            c: "Cell Biology",
+            d: "Both B & C",
+            ans: "ans4"
+        },
+
+        {
+            question: "Q6. Botany is also known as",
+            a: "Phytology",
+            b: "Phycology",
+            c: "Pedology",
+            d: "Plantophyta",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q7. Tissue in which cells have lost the capacity of cell division",
+            a: "Mesristmatic tissue",
+            b: "Permanent tissue",
+            c: "Both a and b",
+            d: "None of these",
+            ans: "ans2"
+        },
+
+        {
+            question: "Q8. During rainy season wooden doors are difficult to open or closure because of  ?",
+            a: "Imbibition",
+            b: "Plasmolysis",
+            c: "Diffusion",
+            d: "Osmosis",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q9. The pressure variations inside the inner ear are turned into electrical signals by the:",
+            a: "Cochlea",
+            b: "Hammer",
+            c: "Stirrup",
+            d: "Anvil",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q10. The gland that is present close to Trachea",
+            a: "Pancreas",
+            b: "Liver",
+            c: "Adrrenal",
+            d: "Thyroid",
+            ans: "ans4"
+        },
+
+        {
+            question: "Q11. The sex of a newborn baby is determined by the chromosome inherited from",
+            a: "The Father",
+            b: "The Mother",
+            c: "The Father's Father",
+            d: "Both A & B",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q12. Only movable bone in the skull",
+            a: "Occipital bone",
+            b: "Frontal bone",
+            c: "Mandible",
+            d: "Temporal bone",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q13. Which tissue provides support to plants and also stores food?",
+            a: "Parenchyma",
+            b: "Collenchyma",
+            c: "Sclerenchyma",
+            d: "No option is correct",
+            ans: "ans1"
+        },
+
+        {
+            question: "Q14. Agrostology is the study of",
+            a: "Seed of oil",
+            b: "Crop",
+            c: "Grass",
+            d: "Fruits",
+            ans: "ans3"
+        },
+
+        {
+            question: "Q15. The rate of heartbeat is accelerated by the hormone",
+            a: "adrenaline",
+            b: "acetylcholine",
+            c: "thyroxine",
+            d: "pituitrin",
+            ans: "ans1"
+        },
+    ];
+
+
+    const question = document.querySelector('.question');
+    const option1 = document.querySelector('#option1');
+    const option2 = document.querySelector('#option2');
+    const option3 = document.querySelector('#option3');
+    const option4 = document.querySelector('#option4');
+    const submit = document.querySelector('#submit');
+    const answers = document.querySelectorAll('.answer');
+    const showScore = document.querySelector('#showScore');
+
+    let questionCount = 0;
+    let score = 0;
+
+    const loadQuestion = () => {
+        const questionList = quizdata[questionCount];
+        question.innerText = questionList.question;
+        option1.innerText = questionList.a;
+        option2.innerText = questionList.b;
+        option3.innerText = questionList.c;
+        option4.innerText = questionList.d;
+        showScore.innerHTML = `
+        <h3>Question ${questionCount + 1}/${quizdata.length}</h3>
+    `
+    }
+
+    loadQuestion();
+    function getCheckAnswer() {
+        let answer;
+        answers.forEach((currentAnswer) => {
+            if (currentAnswer.checked) {
+                answer = currentAnswer.id;
+            }
+
+        });
+        return answer;
+    }
+
+    const deSelectOptions = () => {
+        answers.forEach((currentAnswer) => {
+            currentAnswer.checked = false;
+        })
+    }
+
+    submit.addEventListener('click', () => {
+        const checkAnswer = getCheckAnswer();
+
+        if (checkAnswer === quizdata[questionCount].ans) {
+            score++;
+            console.log(score);
+        };
+
+        questionCount += 1;
+        if (questionCount < quizdata.length) {
+            deSelectOptions();
+            loadQuestion();
+        }
+        else {
+            showScore.innerHTML = `
+           <h3> Your Score:  ${score}/${quizdata.length} </h3>
+           <h3> Correct: ${score}&nbsp&nbsp&nbsp&nbspIncorrect: ${quizdata.length - score} </h3>
+           <div id="button2"><button class="btn" onclick="location.reload()">Restart</button></div>           
+        `;
+
+            // showScore.classList.remove('scoreArea');
+        }
+    });
+
+
+
+
+
+</script>
