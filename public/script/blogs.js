@@ -102,3 +102,20 @@ const gbpiet = () =>{
     document.getElementById("DefaultBlog").style.display="none";
     loadBlogData("script/aboutgbpiet.txt");
 }
+
+
+//about backend
+
+const backend = () =>{
+    document.getElementById("getBlogData").innerHTML="";
+    document.getElementById("DefaultBlog").style.display="none";
+    loadBlogData("script/aboutbackend.txt");
+}
+
+//about front end
+
+const frontend = () =>{
+    document.getElementById("getBlogData").innerHTML="";
+    document.getElementById("DefaultBlog").style.display="none";
+    loadBlogData("script/aboutfrontend.txt");
+}

@@ -213,17 +213,17 @@ button:hover{
 
     .formArea{
         margin-top: 2rem;
-        height: 70vh;
+        height: 66vh;
         width: 85vw;
     }
 
     .container{
-        height: 63vh;
+        height: 58vh;
         width: 85vw;
     }
 
     .inputArea input{
-        width: 70%;
+        width: 90%;
     }
 
     .inputArea textArea{

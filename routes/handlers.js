@@ -16,7 +16,7 @@ const Contact = mongoose.model("Contact", contactSchema);
 
 router.get('/',(req,res)=>{
     res.render('index',{
-        title:"Home Page",
+        title:"CollegeSummary",
         style:"index.css"
     });
 });
@@ -76,6 +76,13 @@ router.get('/blogs',(req,res)=>{
     });
 });
 
+//contribute route
 
+router.get('/contribute',(req,res)=>{
+    res.render('contribute',{
+        title:"Contribute|Collegesummary",
+        style:"contribute.css"
+    })
+})
 
 module.exports = router;

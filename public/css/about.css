@@ -71,7 +71,7 @@
      justify-content: center;
      flex-direction: column;
      border-radius:10px;
-     box-shadow: 13px 11px 30px #272727;
+     box-shadow: 6px 11px 30px #272727;
 }
 
 h2{
@@ -189,7 +189,7 @@ h2{
          font-size: 14px;    
      }
      .abouArea{
-          height:60vh;
+          height:53vh;
           width:80vw;
      }
 
